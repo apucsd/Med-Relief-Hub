@@ -6,7 +6,7 @@ const Navbar = () => {
     <header className="container  font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
         to="/"
-        className="flex items-center whitespace-nowrap text-2xl font-black"
+        className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
       >
         <span className="flex gap-1 justify-center items-center bold">
           <img src="logo.svg" alt="" />
