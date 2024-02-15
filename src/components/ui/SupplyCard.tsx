@@ -1,11 +1,16 @@
 import { Button } from "./button";
-
-const SupplyCard = ({ image, amount, category, title }) => {
+type TSupply = {
+  image: string;
+  amount: number;
+  category: string;
+  title: string;
+};
+const SupplyCard = ({ image, amount, category, title }: TSupply) => {
   return (
     <div className="relative w-full md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow">
       <div>
         <img
-          className="h-60 rounded-br-[100px] hover:rounded-br-none hover:rounded-tl-[100px] transition-all duration-500 object-cover  w-full"
+          className="h-60 rounded-br-[100px] hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
           src={image}
           alt="supply card"
         />

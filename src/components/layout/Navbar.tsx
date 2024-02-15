@@ -10,7 +10,7 @@ const Navbar = () => {
       >
         <span className="flex gap-1 justify-center items-center bold">
           <img src="logo.svg" alt="" />
-          Medihealth
+          MedReliefHub
         </span>
       </Link>
       <input type="checkbox" className="peer hidden" id="navbar-open" />
@@ -44,7 +44,7 @@ const Navbar = () => {
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
-                to="/all-supplies"
+                to="/supplies"
               >
                 <span className=" bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                   All Supplies
