@@ -7,10 +7,10 @@ type TSupply = {
 };
 const SupplyCard = ({ image, amount, category, title }: TSupply) => {
   return (
-    <div className="relative w-full md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow">
+    <div className="relative w-full  md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow">
       <div>
         <img
-          className="h-60 rounded-br-[100px] hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
+          className="h-[150px] rounded-br-[100px] hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
           src={image}
           alt="supply card"
         />

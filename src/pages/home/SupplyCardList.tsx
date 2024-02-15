@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const SupplyCardList = () => {
   const supplyPosts = [
     {
+      id: 1,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "First Aid Kit",
@@ -13,8 +14,12 @@ const SupplyCardList = () => {
         "A comprehensive first aid kit containing bandages, antiseptics, scissors, and other essential medical supplies.",
       category: "First Aid Kits",
       amount: 10,
+      supplier: "ABC Medical Supplies",
+      location: "Dhaka, Bangladesh",
+      dateAdded: "2024-02-15",
     },
     {
+      id: 2,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "N95 Respirator Masks",
@@ -22,8 +27,12 @@ const SupplyCardList = () => {
         "High-quality N95 respirator masks designed to filter out airborne particles and protect against respiratory hazards.",
       category: "Personal Protective Equipment",
       amount: 130,
+      supplier: "XYZ Safety Gear",
+      location: "Chittagong, Bangladesh",
+      dateAdded: "2024-02-16",
     },
     {
+      id: 3,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "Blood Pressure Monitor",
@@ -31,8 +40,12 @@ const SupplyCardList = () => {
         "A digital blood pressure monitor for accurately measuring blood pressure levels at home or in medical facilities.",
       category: "Medical Equipment",
       amount: 140,
+      supplier: "MedTech Solutions",
+      location: "Sylhet, Bangladesh",
+      dateAdded: "2024-02-17",
     },
     {
+      id: 4,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "Antibiotics",
@@ -40,8 +53,12 @@ const SupplyCardList = () => {
         "A course of broad-spectrum antibiotics effective against bacterial infections, including amoxicillin and ciprofloxacin.",
       category: "Medications",
       amount: 210,
+      supplier: "Global Pharmaceuticals",
+      location: "Rajshahi, Bangladesh",
+      dateAdded: "2024-02-18",
     },
     {
+      id: 5,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "Emergency Food Rations",
@@ -49,8 +66,12 @@ const SupplyCardList = () => {
         "Nutritious food rations with a long shelf life, suitable for emergency situations and disaster relief efforts.",
       category: "Food Supplies",
       amount: 102,
+      supplier: "Relief Food Co.",
+      location: "Barisal, Bangladesh",
+      dateAdded: "2024-02-19",
     },
     {
+      id: 6,
       image:
         "https://images-cdn.ubuy.com.sa/634f53e72533222659096ca6-first-aid-kit-hse-50-person-in-essential.jpg",
       title: "Sterile Gauze Pads",
@@ -58,6 +79,9 @@ const SupplyCardList = () => {
         "Sterile gauze pads for wound dressing and first aid applications, individually packaged for hygiene.",
       category: "Medical Supplies",
       amount: 102,
+      supplier: "MediWipe Ltd.",
+      location: "Khulna, Bangladesh",
+      dateAdded: "2024-02-20",
     },
   ];
 

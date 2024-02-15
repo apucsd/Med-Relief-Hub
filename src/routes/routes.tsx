@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/home/Home";
 import Login from "../pages/Login";
 import Supplies from "@/pages/supplies/Supplies";
+import SupplyDetail from "@/components/ui/SupplyDetail";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "/supplies",
         element: <Supplies />,
+      },
+      {
+        path: "/supplies/:id",
+        element: <SupplyDetail />,
       },
       {
         path: "/login",

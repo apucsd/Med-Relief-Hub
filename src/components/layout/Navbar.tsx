@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
-    <header className="container  font-semibold relative mx-auto flex flex-col px-4 pb-4 lg:flex-row lg:items-center">
+    <header className="container  font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
         to="/"
         className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"

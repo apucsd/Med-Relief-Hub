@@ -1,12 +1,15 @@
+import { cn } from "@/lib/utils";
+
 type TSectionProps = {
   name: string;
-  title: string;
+  title?: string;
   subTitle?: string;
+  className?: string;
 };
 
-const SectionTitle = ({ name, title, subTitle }: TSectionProps) => {
+const SectionTitle = ({ name, title, subTitle, className }: TSectionProps) => {
   return (
-    <div className="px-4 mb-10 text-center md:my-20">
+    <div className={cn(`px-4 mb-10 text-center md:my-20 ${className} `)}>
       <p className="mb-2 text-lg font-semibold text-primary dark:text-gray-400">
         {name}
       </p>
