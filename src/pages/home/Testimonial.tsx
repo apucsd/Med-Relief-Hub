@@ -61,7 +61,14 @@ const Testimonial = () => {
           Discover What Our Community Says About Us.
         </p>
       </div>
-      <Carousel className="w-full">
+      <Carousel
+        opts={{
+          loop: true,
+          duration: 10,
+          inViewThreshold: 1,
+        }}
+        className="w-full"
+      >
         <CarouselContent>
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index}>
