@@ -1,3 +1,4 @@
+import SectionTitle from "@/components/ui/SectionTitle";
 import {
   Carousel,
   CarouselContent,
@@ -56,10 +57,11 @@ const Testimonial = () => {
   return (
     <div className="container">
       <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-3xl font-extrabold">What our happy client say</h2>
-        <p className="text-sm mt-4 leading-relaxed">
-          Discover What Our Community Says About Us.
-        </p>
+        <SectionTitle
+          name="Testimonial"
+          title="What our happy client say"
+          subTitle="Discover What Our Community Says About Us."
+        />
       </div>
       <Carousel
         opts={{

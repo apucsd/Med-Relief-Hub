@@ -1,3 +1,4 @@
+import SectionTitle from "@/components/ui/SectionTitle";
 import SupplyCard from "@/components/ui/SupplyCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -62,13 +63,12 @@ const SupplyCardList = () => {
 
   return (
     <div className="container my-20">
-      <div className="max-w-2xl mx-auto text-center my-10">
-        <h2 className="text-3xl font-extrabold">Featured Supplies</h2>
-        <p className="text-sm mt-4 leading-relaxed text-gray-500">
-          Explore essential health and medical resources for post-disaster
-          relief efforts
-        </p>
-      </div>
+      <SectionTitle
+        name="Supplies"
+        title="Featured Supplies"
+        subTitle="Explore essential health and medical resources for post-disaster relief efforts."
+      />
+
       <div className="flex items-end justify-end">
         <div>
           <Link to="/supplies">

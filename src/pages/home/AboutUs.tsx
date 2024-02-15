@@ -1,3 +1,4 @@
+import SectionTitle from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
@@ -10,24 +11,10 @@ const AboutUs = () => {
       />
       <section className="flex items-center  lg:h-screen ">
         <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
-          <div className="px-4 mb-10 md:text-center md:mb-20">
-            <p className="mb-2 text-lg font-semibold text-primary dark:text-gray-400">
-              About Us
-            </p>
-            <h2 className="pb-2 text-2xl font-bold  md:text-4xl dark:text-gray-300">
-              What we do
-            </h2>
-            <div className="flex w-32 mt-1 mb-6 overflow-hidden rounded md:mx-auto md:mb-14">
-              <div className="flex-1 h-2 bg-blue-200"></div>
-              <div className="flex-1 h-2 bg-primary"></div>
-              <div className="flex-1 h-2 bg-blue-300"></div>
-            </div>
-          </div>
+          <SectionTitle name="About Us" title=" What we do" />
+
           <div className="flex flex-wrap items-center">
             <div className="w-full px-4 mb-10 md:w-1/2 lg:mb-0">
-              <h2 className="mb-4 text-2xl font-bold text-gray-700 dark:text-gray-300">
-                About Us
-              </h2>
               <p className="mb-4 text-base leading-7 text-gray-500 dark:text-gray-400">
                 At MedReliefHub.com, we are dedicated to providing a better
                 facility for managing health and medical supplies, especially in
@@ -102,7 +89,7 @@ const AboutUs = () => {
               <img
                 src="https://apadm.org/cms/wp-content/uploads/2023/12/bang202111_3.jpeg"
                 alt=""
-                className="relative z-40 object-cover w-full rounded-md md:rounded-tl-[108px] md:h-96 h-44"
+                className="relative z-40 object-cover w-full md:rounded-tl-[108px] md:h-96 h-44"
               />
               <div className="absolute top-0 right-0 items-center justify-center hidden -mt-16 lg:inline-flex">
                 <svg

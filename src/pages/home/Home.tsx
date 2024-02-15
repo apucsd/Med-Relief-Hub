@@ -1,5 +1,6 @@
 import AboutUs from "./AboutUs";
 import Banner from "./Banner";
+import Gallery from "./Gallery";
 import SupplyCardList from "./SupplyCardList";
 import Testimonial from "./Testimonial";
 
@@ -10,6 +11,7 @@ const Home = () => {
       <SupplyCardList />
       <Testimonial />
       <AboutUs />
+      <Gallery />
     </div>
   );
 };
