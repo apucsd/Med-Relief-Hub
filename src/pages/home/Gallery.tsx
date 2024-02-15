@@ -12,7 +12,7 @@ const Gallery = () => {
     <div className="container my-10">
       <SectionTitle name="Gallery" title="Explore captivating scenes" />
       <LightGallery
-        elementClassNames="max-w-5xl mx-auto columns-1 sm:columns-2  md:columns-3  lg:columns-4 [&>img:not(:first-child)]:mt-8"
+        elementClassNames="max-w-5xl mx-auto columns-1 sm:columns-2  md:columns-4  lg:columns-5 "
         speed={500}
         plugins={[lgThumbnail, lgZoom]}
       >
