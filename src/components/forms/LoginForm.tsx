@@ -3,26 +3,40 @@ import { Button } from "../ui/button";
 import { FieldValues, useForm } from "react-hook-form";
 import { useLoginUserMutation } from "@/redux/features/auth/authApi";
 import { toast } from "sonner";
+import { verifyJWT } from "@/lib/verifyJWT";
+import { useAppDispatch } from "@/redux/hook";
+import { setUser } from "@/redux/features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const [loginUser, { isError, isLoading, isSuccess }] = useLoginUserMutation();
-  const { register, reset, handleSubmit } = useForm({
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const [loginUser, { isLoading }] = useLoginUserMutation();
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       email: "apu@gmail.com",
       password: "1111",
     },
   });
-  const onSubmit = (data: FieldValues) => {
-    loginUser(data);
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      const res = await loginUser(data).unwrap();
+      const user = verifyJWT(res?.token);
+      dispatch(
+        setUser({
+          user: user,
+          token: res.token,
+        })
+      );
+
+      toast.success("User Login successful");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      toast.error("Email and password is not valid");
+    }
   };
-  if (isError) {
-    toast.error("Email and password is not valid");
-    reset();
-  }
-  if (isSuccess) {
-    toast.success("User Login successful");
-  }
-  console.log({ isError, isSuccess });
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="mb-10">

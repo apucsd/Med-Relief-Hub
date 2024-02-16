@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { logoutUser } from "@/redux/features/auth/authSlice";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
+  const { user } = useAppSelector((state) => state.auth);
+  console.log(user);
+  const dispatch = useAppDispatch();
   return (
     <header className="container  font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
@@ -52,20 +58,28 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/login">
-                <Button>Login</Button>
-              </Link>
+              {user ? (
+                <div title={user.email}>
+                  <Sidebar />
+                </div>
+              ) : (
+                <Link to="/login">
+                  <Button>Login</Button>
+                </Link>
+              )}
             </li>
-            <li>
-              <Link to="/dashboard">
-                <Button variant="secondary">Dashboard</Button>
-              </Link>
-            </li>
-            <li>
-              <div>
-                <Button variant="secondary">Logout </Button>
-              </div>
-            </li>
+            {user && (
+              <li>
+                <div>
+                  <Button
+                    onClick={() => dispatch(logoutUser())}
+                    variant="secondary"
+                  >
+                    Logout{" "}
+                  </Button>
+                </div>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

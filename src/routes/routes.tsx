@@ -5,6 +5,7 @@ import Home from "../pages/home/Home";
 import Login from "../pages/Login";
 import Supplies from "@/pages/supplies/Supplies";
 import SupplyDetail from "@/components/ui/SupplyDetail";
+import AdminLayout from "@/components/layout/AdminLayout";
 
 export const router = createBrowserRouter([
   {
@@ -29,5 +30,9 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
     ],
+  },
+  {
+    path: "admin",
+    element: <AdminLayout />,
   },
 ]);
