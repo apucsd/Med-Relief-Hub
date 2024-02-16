@@ -1,43 +1,72 @@
+import { Layout, Menu, MenuProps } from "antd";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+const { Sider } = Layout;
+import {
+  HomeOutlined,
+  FileDoneOutlined,
+  EditOutlined,
+  OrderedListOutlined,
+} from "@ant-design/icons";
+
+// import { Link } from "react-router-dom";
 const AdminSidebar = () => {
-  const navItems = [
+  const items: MenuProps["items"] = [
     {
-      title: "Dashboard",
-      href: "/dashboard",
-      icon: "dashboard",
-      label: "Dashboard",
+      key: "dashboard",
+      label: <NavLink to="/dashboard">Dashboard</NavLink>,
+      icon: React.createElement(HomeOutlined),
     },
     {
-      title: "User",
-      href: "/dashboard/user",
-      icon: "user",
-      label: "user",
-    },
-    {
-      title: "Employee",
-      href: "/dashboard/employee",
-      icon: "employee",
-      label: "employee",
-    },
-    {
-      title: "Profile",
-      href: "/dashboard/profile",
-      icon: "profile",
-      label: "profile",
-    },
-    {
-      title: "Kanban",
-      href: "/dashboard/kanban",
-      icon: "kanban",
-      label: "kanban",
-    },
-    {
-      title: "Login",
-      href: "/",
-      icon: "login",
-      label: "login",
+      key: "all-supplies",
+      label: "All Supplies",
+      icon: React.createElement(OrderedListOutlined),
+      children: [
+        {
+          key: "supplies",
+          label: <NavLink to="/dashboard/supplies">Supplies</NavLink>,
+          icon: React.createElement(FileDoneOutlined),
+        },
+        {
+          key: "create-supply",
+          label: <NavLink to="/dashboard/create-supply">Create Supply</NavLink>,
+          icon: React.createElement(EditOutlined),
+        },
+      ],
     },
   ];
-  return <div className="col-span-2"></div>;
+  return (
+    <Sider
+      breakpoint="lg"
+      theme="light"
+      collapsedWidth="0"
+      //   onBreakpoint={(broken) => {
+      //     console.log(broken);
+      //   }}
+      //   onCollapse={(collapsed, type) => {
+      //     console.log(collapsed, type);
+      //   }}
+    >
+      <div className="demo-logo-vertical h-20">
+        <Link
+          to="/"
+          className="flex ms-4  items-center h-full  text-2xl font-black"
+        >
+          <span className="flex gap-1 justify-center items-center bold">
+            <img className="size-8" src="logo.svg" alt="" />
+            MedReliefHub
+          </span>
+        </Link>
+      </div>
+      <Menu
+        theme="light"
+        mode="inline"
+        className=""
+        defaultSelectedKeys={["4"]}
+        items={items}
+      />
+    </Sider>
+  );
 };
 
 export default AdminSidebar;

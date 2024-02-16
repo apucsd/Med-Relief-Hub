@@ -8,6 +8,8 @@ import SupplyDetail from "@/components/ui/SupplyDetail";
 import AdminLayout from "@/components/layout/AdminLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Dashboard from "@/pages/admin/Dashboard";
+import AllSupplies from "@/pages/admin/AllSupplies";
+import CreateSupply from "@/pages/admin/CreateSupply";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/supplies",
+        element: <AllSupplies />,
+      },
+      {
+        path: "/dashboard/create-supply",
+        element: <CreateSupply />,
       },
     ],
   },
