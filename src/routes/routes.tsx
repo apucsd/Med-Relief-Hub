@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import Supplies from "@/pages/supplies/Supplies";
 import SupplyDetail from "@/components/ui/SupplyDetail";
 import AdminLayout from "@/components/layout/AdminLayout";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import Dashboard from "@/pages/admin/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +34,17 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "admin",
-    element: <AdminLayout />,
+    path: "dashboard",
+    element: (
+      <ProtectedRoute>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+    ],
   },
 ]);
