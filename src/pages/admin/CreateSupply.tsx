@@ -32,7 +32,11 @@ const CreateSupply = () => {
   };
   return (
     <div className="w-full max-w-lg mx-auto">
-      <SupplyForm onFinish={onFinish} handleImage={handleImage} />
+      <SupplyForm
+        required={true}
+        onFinish={onFinish}
+        handleImage={handleImage}
+      />
     </div>
   );
 };

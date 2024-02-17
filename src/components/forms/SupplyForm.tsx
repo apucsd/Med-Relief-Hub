@@ -8,9 +8,11 @@ const TextArea = Input;
 const SupplyForm = ({
   onFinish,
   handleImage,
+  required = false,
 }: {
   onFinish: any;
   handleImage: any;
+  required: boolean;
 }) => {
   return (
     <div
@@ -34,21 +36,27 @@ const SupplyForm = ({
         <Form.Item
           label="Title"
           name="title"
-          rules={[{ required: true, message: "Please enter title name" }]}
+          rules={[
+            { required: required && true, message: "Please enter title name" },
+          ]}
         >
           <Input />
         </Form.Item>
         <Form.Item
           label="Image"
           name="image"
-          rules={[{ required: true, message: "Please enter image" }]}
+          rules={[
+            { required: required && true, message: "Please enter image" },
+          ]}
         >
           <Input onChange={handleImage} type="file" />
         </Form.Item>
         <Form.Item
           label="Select Category"
           name="category"
-          rules={[{ required: true, message: "Please select category" }]}
+          rules={[
+            { required: required && true, message: "Please select category" },
+          ]}
         >
           <Select>
             <Select.Option value="First Aid Kits">First Aid Kits</Select.Option>
@@ -65,7 +73,9 @@ const SupplyForm = ({
         <Form.Item
           label="Description"
           name="description"
-          rules={[{ required: true, message: "Please enter description" }]}
+          rules={[
+            { required: required && true, message: "Please enter description" },
+          ]}
         >
           <TextArea
             style={{ height: 100, resize: "none" }}
@@ -75,7 +85,12 @@ const SupplyForm = ({
         <Form.Item
           label="Amount"
           name="amount"
-          rules={[{ required: true, message: "Please enter amount number" }]}
+          rules={[
+            {
+              required: required && true,
+              message: "Please enter amount number",
+            },
+          ]}
         >
           <InputNumber />
         </Form.Item>

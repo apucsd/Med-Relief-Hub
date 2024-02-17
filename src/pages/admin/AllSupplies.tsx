@@ -14,16 +14,33 @@ import {
 } from "@/components/ui/table";
 import { TSupply } from "@/types/type";
 import { Button } from "@/components/ui/button";
-import { FileEdit, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
+import { Modal } from "antd";
+import { ExclamationCircleFilled } from "@ant-design/icons";
+import { toast } from "sonner";
+import EditSupplyModal from "@/components/ui/EditSupplyModal";
+const { confirm } = Modal;
 
 const AllSupplies = () => {
   const { data } = useGetSuppliesQuery(undefined);
-  const [deleteSupply, { data: deletedData }] = useDeleteSuppliesMutation();
-  const handleDelete = (id: string) => {
-    deleteSupply(id);
+  const [deleteSupply] = useDeleteSuppliesMutation();
+
+  const showDeleteConfirm = (id: string) => {
+    confirm({
+      title: "Are you sure delete this?",
+      icon: <ExclamationCircleFilled />,
+      content: "This will delete from the database",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk() {
+        deleteSupply(id);
+
+        toast.success("A supply is deleted successfully");
+      },
+    });
   };
 
-  console.log(deletedData);
   return (
     <div>
       <Table>
@@ -43,11 +60,10 @@ const AllSupplies = () => {
               <TableCell>{item.category}</TableCell>
               <TableCell>{item.amount}</TableCell>
               <TableCell className=" flex text-end justify-end mx-auto">
-                <Button variant="ghost">
-                  <FileEdit className="size-4 text-primary" />
-                </Button>
+                <EditSupplyModal id={item._id as string} />
+
                 <Button
-                  onClick={() => handleDelete(item._id as string)}
+                  onClick={() => showDeleteConfirm(item._id as string)}
                   variant="ghost"
                 >
                   <Trash2 className="size-4 text-red-500" />
