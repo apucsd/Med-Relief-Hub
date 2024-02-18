@@ -1,8 +1,16 @@
 import SectionTitle from "@/components/ui/SectionTitle";
-
+import useAnimateComponent from "@/hooks/useAnimateComponent";
+import { motion } from "framer-motion";
 const States = () => {
+  const { ref, variants, control } = useAnimateComponent();
   return (
-    <div className="container relative overflow-y-hidden my-10">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      className="container relative overflow-y-hidden my-10"
+    >
       <img
         className="w-[500px] h-[500px] -z-30 absolute -left-[20%] -top-1/2 "
         src="Oval.svg"
@@ -36,7 +44,7 @@ const States = () => {
           <p className="font-semibold mt-3">Medical Camp</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

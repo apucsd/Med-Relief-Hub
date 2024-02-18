@@ -2,6 +2,7 @@ import { useGetSingleSupplyQuery } from "@/redux/features/supply/supplyApi";
 import { TSupply } from "@/types/type";
 import { useParams } from "react-router-dom";
 import { Button } from "./button";
+import { toast } from "sonner";
 
 const SupplyDetail = () => {
   const { id } = useParams();
@@ -53,10 +54,18 @@ const SupplyDetail = () => {
             </div>
             <div className="flex -mx-2 my-10 mb-4">
               <div className="w-1/2 px-2">
-                <Button className="w-full">Donate Now</Button>
+                <Button
+                  onClick={() => toast.success("Thank you for your help")}
+                  className="w-full"
+                >
+                  Donate Now
+                </Button>
               </div>
               <div className="w-1/2  px-2">
-                <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                <button
+                  onClick={() => toast.success("We will remind you later!")}
+                  className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600"
+                >
                   Add to Wishlist
                 </button>
               </div>

@@ -4,12 +4,19 @@ import { Button } from "@/components/ui/button";
 import { useGetSuppliesQuery } from "@/redux/features/supply/supplyApi";
 import { TSupply } from "@/types/type";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
+import useAnimateComponent from "@/hooks/useAnimateComponent";
 const SupplyCardList = () => {
   const { data } = useGetSuppliesQuery(undefined);
-
+  const { ref, variants, control } = useAnimateComponent();
   return (
-    <div className="container my-20">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      className="container my-20"
+    >
       <SectionTitle
         name="Supplies"
         title="Featured Supplies"
@@ -42,7 +49,7 @@ const SupplyCardList = () => {
           <SupplyCard {...supplyPost} key={supplyPost._id} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

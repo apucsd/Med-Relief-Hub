@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import { TSupply } from "@/types/type";
+import { motion } from "framer-motion";
 
 const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
   return (
-    <div className="relative w-full  md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow">
+    <motion.div
+      whileHover={{
+        scale: 1.1,
+        transition: {
+          duration: 0.2,
+          type: "spring",
+          stiffness: 600,
+        },
+      }}
+      animate={{ rotate: 360 }}
+      className="relative w-full  md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow"
+    >
       <div>
         <img
           className="h-[150px] rounded-md hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
@@ -38,7 +50,7 @@ const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,16 @@
 import SectionTitle from "@/components/ui/SectionTitle";
-
+import useAnimateComponent from "@/hooks/useAnimateComponent";
+import { motion } from "framer-motion";
 const EmergencyContacts = () => {
+  const { ref, variants, control } = useAnimateComponent();
   return (
-    <div className=" py-12 container">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      className=" py-12 container"
+    >
       <SectionTitle name="Contacts" title="  Emergency Contacts" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-10">
@@ -55,7 +63,7 @@ const EmergencyContacts = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,20 @@
 import SectionTitle from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/button";
+import useAnimateComponent from "@/hooks/useAnimateComponent";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
+  const { ref, variants, control } = useAnimateComponent();
+
   return (
-    <div id="about" className="container relative overflow-hidden py-10 my-10">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      id="about"
+      className="container relative overflow-hidden py-10 my-10"
+    >
       <img
         className="w-[1200px] h-[700px] -z-30 absolute -top-1/2 -right-[50%] "
         src="Oval.svg"
@@ -197,7 +208,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

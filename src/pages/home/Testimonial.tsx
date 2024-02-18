@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/ui/SectionTitle";
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import useAnimateComponent from "@/hooks/useAnimateComponent";
 const Testimonial = () => {
+  const { ref, variants, control } = useAnimateComponent();
   const testimonials = [
     {
       id: 1,
@@ -55,7 +58,13 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="container">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      className="container"
+    >
       <div className="text-center max-w-xl mx-auto mb-12">
         <SectionTitle
           name="Testimonial"
@@ -158,7 +167,7 @@ const Testimonial = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </div>
+    </motion.div>
   );
 };
 

@@ -7,9 +7,18 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { motion } from "framer-motion";
+import useAnimateComponent from "@/hooks/useAnimateComponent";
 const Gallery = () => {
+  const { ref, variants, control } = useAnimateComponent();
   return (
-    <div className="container my-10">
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={control}
+      initial="hidden"
+      className="container my-10"
+    >
       <SectionTitle name="Gallery" title="Explore captivating scenes" />
       <LightGallery
         elementClassNames="max-w-5xl mx-auto columns-1 sm:columns-2  md:columns-4  lg:columns-5 "
@@ -60,7 +69,7 @@ const Gallery = () => {
         </a>
       </LightGallery>
       <div></div>
-    </div>
+    </motion.div>
   );
 };
 
