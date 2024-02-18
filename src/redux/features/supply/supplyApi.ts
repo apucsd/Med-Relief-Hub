@@ -8,6 +8,7 @@ const supplyApi = baseApi.injectEndpoints({
         method: "POST",
         body: supply,
       }),
+      invalidatesTags: ["Supplies"],
     }),
     updateSupply: builder.mutation({
       query: (data) => {
@@ -22,6 +23,13 @@ const supplyApi = baseApi.injectEndpoints({
     getSupplies: builder.query({
       query: () => ({
         url: "/supplies",
+        method: "GET",
+      }),
+      providesTags: ["Supplies"],
+    }),
+    getSuppliesStatistics: builder.query({
+      query: () => ({
+        url: "/supplies/statistics",
         method: "GET",
       }),
       providesTags: ["Supplies"],
@@ -41,4 +49,5 @@ export const {
   useGetSuppliesQuery,
   useDeleteSuppliesMutation,
   useUpdateSupplyMutation,
+  useGetSuppliesStatisticsQuery,
 } = supplyApi;
