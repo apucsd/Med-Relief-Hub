@@ -29,7 +29,7 @@ const LoginForm = () => {
         })
       );
 
-      toast.success("User Login successful");
+      toast.success("User Login successful", { duration: 1000 });
       navigate("/");
     } catch (error) {
       console.log(error);

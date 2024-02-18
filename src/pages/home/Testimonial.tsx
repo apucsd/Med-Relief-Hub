@@ -59,7 +59,7 @@ const Testimonial = () => {
       <div className="text-center max-w-xl mx-auto mb-12">
         <SectionTitle
           name="Testimonial"
-          title="What our happy client say"
+          title="What our happy supplier say"
           subTitle="Discover What Our Community Says About Us."
         />
       </div>

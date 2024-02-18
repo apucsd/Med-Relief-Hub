@@ -16,7 +16,7 @@ const DashboardStates = () => {
   const { data } = useGetSuppliesStatisticsQuery(undefined);
   return (
     <div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-2">
         <div className="relative overflow-hidden  shadow">
           <div className="px-6 py-10">
             <div className="flex items-center">
@@ -48,7 +48,7 @@ const DashboardStates = () => {
             <TableRow>
               <TableHead className="">Category</TableHead>
               <TableHead>Total Supply</TableHead>
-              <TableHead>Total Supply</TableHead>
+              <TableHead>Total Category Amount</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

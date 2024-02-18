@@ -20,7 +20,7 @@ const ShowPieChart = () => {
       <PieChart>
         <Legend layout="vertical" verticalAlign="bottom" />
         <Pie
-          data={data?.statistics}
+          data={data && data?.statistics}
           nameKey="_id"
           dataKey="totalDonation"
           cx="50%"

@@ -1,16 +1,13 @@
+import { Link } from "react-router-dom";
 import { Button } from "./button";
-type TSupply = {
-  image: string;
-  amount: number;
-  category: string;
-  title: string;
-};
-const SupplyCard = ({ image, amount, category, title }: TSupply) => {
+import { TSupply } from "@/types/type";
+
+const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
   return (
     <div className="relative w-full  md:max-w-xs my-2 mx-auto overflow-hidden rounded-lg bg-white shadow">
       <div>
         <img
-          className="h-[150px] rounded-br-[100px] hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
+          className="h-[150px] rounded-md hover:rounded-br-none  transition-all duration-500 object-cover  w-full"
           src={image}
           alt="supply card"
         />
@@ -34,9 +31,11 @@ const SupplyCard = ({ image, amount, category, title }: TSupply) => {
             </span>
             <span className="text-sm text-slate-900">per pack</span>
           </p>
-          <Button className="absolute bottom-0 right-0 rounded-tr-none rounded-bl-none rounded-tl-[20px]">
-            View Details
-          </Button>
+          <Link to={`/supplies/${_id}`}>
+            <Button className="absolute bottom-0 right-0 rounded-tr-none rounded-bl-none rounded-tl-[20px]">
+              View Details
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

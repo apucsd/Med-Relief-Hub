@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
-    <div className="container relative overflow-hidden py-10 my-10">
+    <div id="about" className="container relative overflow-hidden py-10 my-10">
       <img
         className="w-[1200px] h-[700px] -z-30 absolute -top-1/2 -right-[50%] "
         src="Oval.svg"
