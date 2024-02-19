@@ -4,7 +4,7 @@ Welcome to MedReliefHub, a Disaster Community Health and Medical Supply platform
 
 ## Live URL
 
-You can access the live version of MedReliefHub [here](#https://med-relief-hub.vercel.app).
+You can access the live version of MedReliefHub [here](https://med-relief-hub.vercel.app).
 
 ## Features
 
