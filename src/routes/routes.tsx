@@ -10,6 +10,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import Dashboard from "@/pages/admin/Dashboard";
 import AllSupplies from "@/pages/admin/AllSupplies";
 import CreateSupply from "@/pages/admin/CreateSupply";
+import Profile from "@/pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

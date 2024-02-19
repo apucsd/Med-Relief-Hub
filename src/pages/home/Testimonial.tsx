@@ -27,7 +27,7 @@ const Testimonial = () => {
       testimonial:
         "MedReliefHub.com assists in accessing and administering medical equipment during emergencies. It's an essential tool for our operations.",
       image:
-        "https://old.bidyanondo.org/uploads/projects/24/Bidyanondo-Mother-and-Child-Care-Hospital-small-1695711233.jpg",
+        "https://www.shutterstock.com/image-photo/portrait-young-investor-banker-workplace-260nw-2364566447.jpg",
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const Testimonial = () => {
       testimonial:
         "MedReliefHub.com easily manages the supply delivery in emergency times. Its user-friendly interface and real-time updates are game-changers.",
       image:
-        "https://old.bidyanondo.org/uploads/projects/24/Bidyanondo-Mother-and-Child-Care-Hospital-small-1695711233.jpg",
+        "https://www.shutterstock.com/image-photo/man-suit-looks-camera-smiles-260nw-606177233.jpg",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Testimonial = () => {
       testimonial:
         "MedReliefHub.com is an indispensable resource for its ease in managing our supply delivery process.",
       image:
-        "https://old.bidyanondo.org/uploads/projects/24/Bidyanondo-Mother-and-Child-Care-Hospital-small-1695711233.jpg",
+        "https://image1.masterfile.com/getImage/NjQ5LTA3MjM4ODk3ZW4uMDAwMDAwMDA=AK-o9l/649-07238897en_Masterfile.jpg",
     },
     {
       id: 5,
@@ -53,8 +53,7 @@ const Testimonial = () => {
       designation: "Emergency Medical Practitioner",
       testimonial:
         "MedReliefHub.com has improved our readiness and coordination in disaster response. It's an essential tool for managing health supplies in emergencies.",
-      image:
-        "https://old.bidyanondo.org/uploads/projects/24/Bidyanondo-Mother-and-Child-Care-Hospital-small-1695711233.jpg",
+      image: "https://copyblogger.com/cdn-origin/images/testimonial.jpg",
     },
   ];
   return (
