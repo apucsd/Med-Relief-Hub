@@ -1,29 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { logoutUser } from "@/redux/features/auth/authSlice";
+import { useAppSelector } from "@/redux/hook";
+
 import Sidebar from "./Sidebar";
-import { Modal } from "antd";
-import { ExclamationCircleFilled } from "@ant-design/icons";
-import { toast } from "sonner";
-const { confirm } = Modal;
+
+import SelectTheme from "../SelectTheme";
 
 const Navbar = () => {
   const { user } = useAppSelector((state) => state.auth);
-  const dispatch = useAppDispatch();
-  const showDeleteConfirm = () => {
-    confirm({
-      title: "Are you sure logout this?",
-      icon: <ExclamationCircleFilled />,
-      okText: "Yes",
-      okType: "danger",
-      cancelText: "No",
-      onOk() {
-        dispatch(logoutUser());
-        toast.success("Logout successful", { duration: 1000 });
-      },
-    });
-  };
+
   return (
     <header className="container  font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
@@ -62,7 +47,7 @@ const Navbar = () => {
       >
         <hr className="mt-4 w-full lg:hidden" />
         <div className="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-          <ul className="flex space-x-4 w-full upp flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
+          <ul className="flex space-x-4 w-full upp flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
@@ -84,6 +69,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <SelectTheme />
+            </li>
+            <li>
               {user ? (
                 <div title={user.email}>
                   <Sidebar />
@@ -94,15 +82,6 @@ const Navbar = () => {
                 </Link>
               )}
             </li>
-            {user && (
-              <li>
-                <div>
-                  <Button onClick={showDeleteConfirm} variant="secondary">
-                    Logout{" "}
-                  </Button>
-                </div>
-              </li>
-            )}
           </ul>
         </div>
       </nav>
