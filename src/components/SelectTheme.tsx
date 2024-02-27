@@ -19,12 +19,14 @@ const SelectTheme = () => {
   const handleSelectTheme = (data: "light" | "dark") => {
     dispatch(setTheme(data));
   };
-  console.log(mode);
+
   return (
     <Select
       onValueChange={(value: "light" | "dark") => handleSelectTheme(value)}
     >
-      <SelectTrigger className="">
+      <SelectTrigger
+        className={`${mode === "light" ? "bg-white" : "bg-black text-white"}`}
+      >
         <div className="flex justify-center items-center gap-2">
           {mode === "light" ? (
             <>

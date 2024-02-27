@@ -68,9 +68,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li>
-              <SelectTheme />
-            </li>
+
             <li>
               {user ? (
                 <div title={user.email}>
@@ -81,6 +79,9 @@ const Navbar = () => {
                   <Button>Login</Button>
                 </Link>
               )}
+            </li>
+            <li>
+              <SelectTheme />
             </li>
           </ul>
         </div>

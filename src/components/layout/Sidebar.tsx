@@ -35,7 +35,7 @@ const Sidebar = () => {
         <span className="relative inline-block">
           <img
             src="https://randomuser.me/api/portraits/women/50.jpg"
-            className="object-cover size-10 hover:cursor-pointer rounded-full "
+            className="object-cover size-9 hover:cursor-pointer rounded-full "
           />
           <span className="absolute animate-pulse top-0 right-0 size-3 bg-green-500 border-2 border-white rounded-full"></span>
         </span>

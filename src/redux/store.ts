@@ -19,12 +19,13 @@ const persistConfig = {
   storage,
 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
+const persistedThemeReducer = persistReducer(persistConfig, themeReducer);
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
 
     auth: persistedReducer,
-    theme: themeReducer,
+    theme: persistedThemeReducer,
   },
   middleware: (defaultMiddleware) =>
     defaultMiddleware({
