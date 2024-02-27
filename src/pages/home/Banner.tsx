@@ -48,13 +48,13 @@ const Banner = () => {
       animate="show"
       className="container"
     >
-      <div>
+      {/* <div>
         <img
           className="w-[1200px] h-full -z-30 absolute -top-1/2 -left-1/2"
           src="Oval.svg"
           alt=""
         />
-      </div>
+      </div> */}
       <section className="my-5">
         <div className="max-w-screen-xl mx-auto  gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">

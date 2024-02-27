@@ -1,10 +1,15 @@
+import Loading from "@/components/ui/Loading";
 import { Button } from "@/components/ui/button";
 import { useGetSuppliesQuery } from "@/redux/features/supply/supplyApi";
 import { TSupply } from "@/types/type";
 import { Link } from "react-router-dom";
 
 const Supplies = () => {
-  const { data } = useGetSuppliesQuery(undefined);
+  const { data, isFetching } = useGetSuppliesQuery(undefined);
+
+  if (isFetching) {
+    return <Loading />;
+  }
 
   return (
     <div className="container my-10">
@@ -12,7 +17,7 @@ const Supplies = () => {
         {data?.result?.map((item: TSupply) => (
           <div
             key={item._id}
-            className="bg-white grid grid-cols-3 items-center w-full rounded-xl  mx-auto  shadow-2xl"
+            className=" grid grid-cols-3 items-center w-full rounded-xl  mx-auto  shadow-2xl"
           >
             <div className="col-span-1">
               <img
@@ -22,11 +27,15 @@ const Supplies = () => {
               />
             </div>
             <div className="col-span-2 px-4 py-6">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-gray-400">{item.description}</p>
+              <h3 className="text-xl truncate font-semibold text-gray-800">
+                {item.title}
+              </h3>
+              <p className="mt-2 truncate text-sm text-gray-400">
+                {item.description}
+              </p>
 
               <div className="mt-2.5 mb-5 flex justify-between items-center">
-                <div className="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
+                <div className="mr-2 rounded text-black bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
                   {item.category}
                 </div>
                 <div className="mr-2 rounded  px-2.5 py-0.5 text-xs font-semibold">

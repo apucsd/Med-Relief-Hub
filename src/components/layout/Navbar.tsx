@@ -10,7 +10,7 @@ const Navbar = () => {
   const { user } = useAppSelector((state) => state.auth);
 
   return (
-    <header className="container  font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
+    <header className="container text-center font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
         to="/"
         className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
@@ -47,7 +47,7 @@ const Navbar = () => {
       >
         <hr className="mt-4 w-full lg:hidden" />
         <div className="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-          <ul className="flex space-x-4 w-full upp flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
+          <ul className="flex text-center lg:space-x-4 w-full  flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
@@ -65,6 +65,26 @@ const Navbar = () => {
               >
                 <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                   All Supplies
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="group  transition-all duration-300 ease-in-out"
+                to="/leaderboard"
+              >
+                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                  Leaderboard
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="group  transition-all duration-300 ease-in-out"
+                to="/community"
+              >
+                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                  Community
                 </span>
               </Link>
             </li>

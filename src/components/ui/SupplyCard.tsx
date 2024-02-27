@@ -11,7 +11,7 @@ const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
         transition: {
           duration: 0.2,
           type: "spring",
-          stiffness: 600,
+          stiffness: 100,
         },
       }}
       animate={{ rotate: 360 }}

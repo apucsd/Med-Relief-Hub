@@ -11,6 +11,7 @@ import Dashboard from "@/pages/admin/Dashboard";
 import AllSupplies from "@/pages/admin/AllSupplies";
 import CreateSupply from "@/pages/admin/CreateSupply";
 import Profile from "@/pages/Profile";
+import LeaderBoard from "@/pages/supplies/LeaderBoard";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/supplies/:id",
         element: <SupplyDetail />,
+      },
+      {
+        path: "/leaderboard",
+        element: <LeaderBoard />,
       },
       {
         path: "/login",

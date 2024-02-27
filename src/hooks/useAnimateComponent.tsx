@@ -9,7 +9,7 @@ const useAnimateComponent = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 1, type: "spring", stiffness: 200 },
+      transition: { duration: 0.7 },
     },
     hidden: { y: 180, opacity: 0 },
   };
