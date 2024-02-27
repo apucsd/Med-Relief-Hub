@@ -1,6 +1,7 @@
 import { baseApi } from "./api/baseApi";
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/auth/authSlice";
+import themeReducer from "./features/theme/themeSlice";
 import {
   FLUSH,
   PAUSE,
@@ -23,6 +24,7 @@ export const store = configureStore({
     [baseApi.reducerPath]: baseApi.reducer,
 
     auth: persistedReducer,
+    theme: themeReducer,
   },
   middleware: (defaultMiddleware) =>
     defaultMiddleware({

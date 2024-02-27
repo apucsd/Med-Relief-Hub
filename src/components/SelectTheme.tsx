@@ -1,40 +1,58 @@
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+} from "@/components/ui/select";
+import { setTheme } from "@/redux/features/theme/themeSlice";
 
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Moon, Sun } from "lucide-react";
-import { Button } from "./ui/button";
 
 const SelectTheme = () => {
+  const { mode } = useAppSelector((state) => state.theme);
+
+  const dispatch = useAppDispatch();
+
+  const handleSelectTheme = (data: "light" | "dark") => {
+    dispatch(setTheme(data));
+  };
+  console.log(mode);
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="bg-transparent border-none">
-          <Sun className=" size-5 mx-auto" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-52">
-        <DropdownMenuLabel>Select Theme</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Sun className="mr-2 h-4 w-4" />
-            <span>Light</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Moon className="mr-2 h-4 w-4" />
-            <span>Dark</span>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Select
+      onValueChange={(value: "light" | "dark") => handleSelectTheme(value)}
+    >
+      <SelectTrigger className="">
+        <div className="flex justify-center items-center gap-2">
+          {mode === "light" ? (
+            <>
+              <Sun className="size-4 " /> <span>Light</span>
+            </>
+          ) : (
+            <>
+              <Moon className="size-4 " /> <span>Dark</span>
+            </>
+          )}
+        </div>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Select Theme</SelectLabel>
+          <SelectItem value="light">
+            <div className="flex justify-center items-center gap-2">
+              <Sun className="size-4 " /> <span>Light</span>
+            </div>
+          </SelectItem>
+          <SelectItem value="dark">
+            <div className="flex justify-center items-center gap-2">
+              <Moon className="size-4 " /> <span>Dark</span>
+            </div>
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 
