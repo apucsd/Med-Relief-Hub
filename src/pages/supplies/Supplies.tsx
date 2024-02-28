@@ -13,6 +13,14 @@ const Supplies = () => {
 
   return (
     <div className="container my-10">
+      <div className=" h-60 bg-[#5E9BE5] dark:bg-black flex justify-center items-center">
+        <div className="text-center space-y-2 text-white ">
+          <h1 className="text-5xl font-semibold">All Supplies</h1>
+          <p className="  text-gray-200">
+            Have a look to the Supplies Post of our organization
+          </p>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {data?.result?.map((item: TSupply) => (
           <div

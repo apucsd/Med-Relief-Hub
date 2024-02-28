@@ -2,6 +2,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 const Banner = () => {
   const imageControl = {
     hidden: {

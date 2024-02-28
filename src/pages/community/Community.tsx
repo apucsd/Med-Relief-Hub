@@ -49,8 +49,15 @@ const Community = () => {
   };
   return (
     <div className="container my-10">
+      <div className=" h-60 bg-[#5E9BE5] dark:bg-black flex justify-center items-center">
+        <div className="text-center space-y-2 text-white ">
+          <h1 className="text-5xl font-semibold">Community Gratitude Wall</h1>
+          <p className="  text-gray-200">
+            Have a look to the volunteer of our organization
+          </p>
+        </div>
+      </div>
       <div>
-        <h1 className="text-3xl font-bold mb-4">Community Gratitude Wall</h1>
         <div className="my-10 ">
           {commentsFromDB?.result?.map((item: TComment) => (
             <CommentCard {...item} />

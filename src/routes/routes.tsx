@@ -14,6 +14,8 @@ import Profile from "@/pages/Profile";
 import LeaderBoard from "@/pages/supplies/LeaderBoard";
 import CreateTestimonial from "@/pages/admin/CreateTestimonial";
 import Community from "@/pages/community/Community";
+import AboutPage from "@/pages/about/AboutPage";
+import VolunteerRecruitmentForm from "@/components/forms/VolunteerRecruitmentForm";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "/community",
         element: <Community />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutPage />,
+      },
+      {
+        path: "/volunteer",
+        element: <VolunteerRecruitmentForm />,
       },
       {
         path: "/login",

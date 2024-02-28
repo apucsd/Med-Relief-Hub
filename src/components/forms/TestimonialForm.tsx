@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Form, Input } from "antd";
+import { Col, Form, Input, Row } from "antd";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
@@ -12,33 +12,45 @@ const TestimonialForm = ({
   handleImage: any;
 }) => {
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-xl mx-auto">
       <Form
+        className="border p-5"
         layout="vertical"
         name="testimonials"
         onFinish={onFinish}
         onFinishFailed={() => toast.error("Please fill in all required fields")}
       >
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[{ required: true, message: "Please enter your name" }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Designation"
-          name="designation"
-          rules={[{ required: true, message: "Please enter your designation" }]}
-        >
-          <Input />
-        </Form.Item>
+        <Row gutter={5}>
+          <Col span={12}>
+            <Form.Item
+              label="Name"
+              name="name"
+              rules={[{ required: true, message: "Please enter your name" }]}
+            >
+              <Input placeholder="Please enter your name" />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item
+              label="Designation"
+              name="designation"
+              rules={[
+                { required: true, message: "Please enter your designation" },
+              ]}
+            >
+              <Input placeholder="Please enter your designation" />
+            </Form.Item>
+          </Col>
+        </Row>
         <Form.Item
           label="Testimonial"
           name="testimonial"
           rules={[{ required: true, message: "Please enter your testimonial" }]}
         >
-          <Input.TextArea rows={4} />
+          <Input.TextArea
+            placeholder="Please enter your testimonial"
+            rows={4}
+          />
         </Form.Item>
         <Form.Item
           label="Image"

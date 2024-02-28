@@ -5,10 +5,53 @@ import { useAppSelector } from "@/redux/hook";
 import Sidebar from "./Sidebar";
 
 import SelectTheme from "../SelectTheme";
+import { Dropdown, MenuProps } from "antd";
+import { ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const { user } = useAppSelector((state) => state.auth);
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: (
+        <Link
+          className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
+          to="/about-us"
+        >
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            About Us
+          </span>
+        </Link>
+      ),
+    },
 
+    {
+      key: "2",
+      label: (
+        <Link
+          className="group uppercase font-semibold transition-all duration-300 ease-in-out"
+          to="/leaderboard"
+        >
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            Leaderboard
+          </span>
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link
+          className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
+          to="/volunteer"
+        >
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            Volunteer
+          </span>
+        </Link>
+      ),
+    },
+  ];
   return (
     <header className="container text-center font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
       <Link
@@ -68,16 +111,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li>
-              <Link
-                className="group  transition-all duration-300 ease-in-out"
-                to="/leaderboard"
-              >
-                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
-                  Leaderboard
-                </span>
-              </Link>
-            </li>
+
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
@@ -87,6 +121,24 @@ const Navbar = () => {
                   Community
                 </span>
               </Link>
+            </li>
+            <li>
+              <Dropdown
+                overlayStyle={{
+                  width: "200px",
+                  textAlign: "center",
+                }}
+                menu={{ items }}
+                placement="bottom"
+                arrow
+              >
+                <div className="hover:cursor-pointer flex items-center">
+                  More
+                  <span>
+                    <ChevronDown className="size-5" />
+                  </span>
+                </div>
+              </Dropdown>
             </li>
 
             <li>
