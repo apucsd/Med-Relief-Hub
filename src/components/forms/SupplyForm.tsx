@@ -27,6 +27,7 @@ const SupplyForm = ({
       }}
     >
       <Form
+        layout="vertical"
         className="w-full"
         name="form"
         onFinish={onFinish}
@@ -96,7 +97,9 @@ const SupplyForm = ({
         </Form.Item>
 
         <Form.Item>
-          <Button type="submit">Submit</Button>
+          <Button className="w-full" type="submit">
+            Submit
+          </Button>
         </Form.Item>
       </Form>
     </div>

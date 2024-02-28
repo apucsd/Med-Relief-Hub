@@ -27,7 +27,7 @@ const CreateSupply = () => {
   const handleImage = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     const imageURL = await getImageURL(file as File);
-    console.log(imageURL);
+
     setImage(imageURL);
   };
   return (

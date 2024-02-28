@@ -8,54 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import useAnimateComponent from "@/hooks/useAnimateComponent";
+import { useGetTestimonialQuery } from "@/redux/features/testimonial/testimonialApi";
+import { TTestimonial } from "@/types/type";
 const Testimonial = () => {
   const { ref, variants, control } = useAnimateComponent();
-  const testimonials = [
-    {
-      id: 1,
-      name: "Mohammad Ali",
-      designation: "Medical Supply Coordinator",
-      testimonial:
-        "MedReliefHub.com has revolutionized how we coordinate medical supplies in disaster-stricken areas. It's an invaluable resource for our team.",
-      image:
-        "https://old.bidyanondo.org/uploads/projects/24/Bidyanondo-Mother-and-Child-Care-Hospital-small-1695711233.jpg",
-    },
-    {
-      id: 2,
-      name: "Sabrina Khan",
-      designation: "Supply Chain Coordinator",
-      testimonial:
-        "MedReliefHub.com assists in accessing and administering medical equipment during emergencies. It's an essential tool for our operations.",
-      image:
-        "https://www.shutterstock.com/image-photo/portrait-young-investor-banker-workplace-260nw-2364566447.jpg",
-    },
-    {
-      id: 3,
-      name: "Rahim Ahmed",
-      designation: "Medical Equipment Manager",
-      testimonial:
-        "MedReliefHub.com easily manages the supply delivery in emergency times. Its user-friendly interface and real-time updates are game-changers.",
-      image:
-        "https://www.shutterstock.com/image-photo/man-suit-looks-camera-smiles-260nw-606177233.jpg",
-    },
-    {
-      id: 4,
-      name: "Mahfuzur Rahman",
-      designation: "Disaster Response Member",
-      testimonial:
-        "MedReliefHub.com is an indispensable resource for its ease in managing our supply delivery process.",
-      image:
-        "https://image1.masterfile.com/getImage/NjQ5LTA3MjM4ODk3ZW4uMDAwMDAwMDA=AK-o9l/649-07238897en_Masterfile.jpg",
-    },
-    {
-      id: 5,
-      name: "Tarikul Islam",
-      designation: "Emergency Medical Practitioner",
-      testimonial:
-        "MedReliefHub.com has improved our readiness and coordination in disaster response. It's an essential tool for managing health supplies in emergencies.",
-      image: "https://copyblogger.com/cdn-origin/images/testimonial.jpg",
-    },
-  ];
+  const { data } = useGetTestimonialQuery(undefined);
   return (
     <motion.div
       ref={ref}
@@ -80,8 +37,8 @@ const Testimonial = () => {
         className="w-full"
       >
         <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index}>
+          {data?.result?.map((testimonial: TTestimonial) => (
+            <CarouselItem key={testimonial._id}>
               <div className="my-10">
                 <div className="max-w-4xl mx-auto">
                   <div className="grid md:grid-cols-2 items-center gap-8 max-w-4xl">

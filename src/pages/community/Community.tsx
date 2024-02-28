@@ -11,7 +11,9 @@ import { toast } from "sonner";
 import Loading from "@/components/ui/Loading";
 import { TComment } from "@/types/type";
 import CommentCard from "@/components/ui/CommentCard";
+import { useNavigate } from "react-router-dom";
 const Community = () => {
+  const navigate = useNavigate();
   const { data: commentsFromDB, isFetching } = useGetCommentsQuery(undefined);
   console.log(commentsFromDB);
   const [createComments] = useCreateCommentsMutation();
@@ -30,6 +32,10 @@ const Community = () => {
   };
 
   const handlePostComments = () => {
+    if (!user) {
+      toast.error("Please login before posting comments");
+      return navigate("/login");
+    }
     if (!comments) {
       return toast.error("Please write some comments first");
     }

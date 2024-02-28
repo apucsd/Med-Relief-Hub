@@ -15,3 +15,10 @@ export type TComment = {
 
   commenterImage?: string;
 };
+export type TTestimonial = {
+  _id: string;
+  name: string;
+  designation: string;
+  testimonial: string;
+  image: string;
+};
