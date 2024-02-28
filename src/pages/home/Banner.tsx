@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const Banner = () => {
   const imageControl = {
     hidden: {
-      opacity: 0,
-      x: 100,
+      opacity: 0.7,
+      x: 300,
     },
     visible: {
       opacity: 1,
@@ -15,7 +15,7 @@ const Banner = () => {
         duration: 0.8,
 
         type: "spring",
-        stiffness: 400,
+        stiffness: 100,
       },
     },
   };
@@ -26,7 +26,7 @@ const Banner = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.5,
-        staggerDirection: 1,
+        staggerDirection: 0.7,
       },
     },
   };
@@ -46,17 +46,10 @@ const Banner = () => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="container"
+      className="container h-screen flex flex-col justify-center "
     >
-      {/* <div>
-        <img
-          className="w-[1200px] h-full -z-30 absolute -top-1/2 -left-1/2"
-          src="Oval.svg"
-          alt=""
-        />
-      </div> */}
-      <section className="my-5">
-        <div className="max-w-screen-xl mx-auto  gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
+      <section>
+        <div className="max-w-screen-xl h-full mx-auto  gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
             <motion.h1
               variants={item}
@@ -117,7 +110,7 @@ const Banner = () => {
           >
             <img
               src="https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_1200,q_auto/faja_covers/kbfus/dbxcbtnmcsyium9lt6xo"
-              className=" md:rounded-tl-[108px] md:h-[350px]"
+              className=" md:rounded-tl-[108px] md:h-[360px] w-full"
               alt=""
             />
           </motion.div>

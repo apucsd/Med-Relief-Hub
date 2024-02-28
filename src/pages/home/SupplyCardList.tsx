@@ -15,7 +15,7 @@ const SupplyCardList = () => {
       variants={variants}
       animate={control}
       initial="hidden"
-      className="container my-20"
+      className="container mb-10"
     >
       <SectionTitle
         name="Supplies"

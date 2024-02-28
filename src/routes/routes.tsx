@@ -12,6 +12,8 @@ import AllSupplies from "@/pages/admin/AllSupplies";
 import CreateSupply from "@/pages/admin/CreateSupply";
 import Profile from "@/pages/Profile";
 import LeaderBoard from "@/pages/supplies/LeaderBoard";
+import CreateTestimonial from "@/pages/admin/CreateTestimonial";
+import Community from "@/pages/community/Community";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/leaderboard",
         element: <LeaderBoard />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
       },
       {
         path: "/login",
@@ -68,6 +74,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/create-supply",
         element: <CreateSupply />,
+      },
+      {
+        path: "/dashboard/create-testimonial",
+        element: <CreateTestimonial />,
       },
     ],
   },

@@ -7,6 +7,7 @@ import {
   FileDoneOutlined,
   EditOutlined,
   OrderedListOutlined,
+  PlusCircleFilled,
 } from "@ant-design/icons";
 
 // import { Link } from "react-router-dom";
@@ -24,29 +25,26 @@ const AdminSidebar = () => {
       children: [
         {
           key: "supplies",
-          label: <NavLink to="/dashboard/supplies">Supplies</NavLink>,
+          label: <NavLink to="/dashboard/supplies">Supplies List</NavLink>,
           icon: React.createElement(FileDoneOutlined),
         },
         {
           key: "create-supply",
-          label: <NavLink to="/dashboard/create-supply">Create Supply</NavLink>,
+          label: <NavLink to="/dashboard/create-supply">Post Supply</NavLink>,
           icon: React.createElement(EditOutlined),
         },
       ],
     },
+    {
+      key: "create-testimonial",
+      label: (
+        <NavLink to="/dashboard/create-testimonial">Create Testimonial</NavLink>
+      ),
+      icon: React.createElement(PlusCircleFilled),
+    },
   ];
   return (
-    <Sider
-      breakpoint="lg"
-      theme="light"
-      collapsedWidth="0"
-      //   onBreakpoint={(broken) => {
-      //     console.log(broken);
-      //   }}
-      //   onCollapse={(collapsed, type) => {
-      //     console.log(collapsed, type);
-      //   }}
-    >
+    <Sider breakpoint="lg" theme="light" collapsedWidth="0">
       <div className="demo-logo-vertical h-20">
         <Link
           to="/"

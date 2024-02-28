@@ -79,19 +79,20 @@ const LeaderBoard = () => {
   return (
     <div className="container my-10">
       <h2 className="text-4xl mb-5 font-semibold uppercase text-center">
-        🏆Leaderboard🏆
+        🏆Top Donor Leaderboard🏆
       </h2>
       <br />
 
       <div>
         <Table className=" text-black">
-          <TableCaption>A list of your recent supplies post.</TableCaption>
+          <TableCaption>Top donor list here.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="">Ranking</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Amount</TableHead>
               <TableHead>Donation Type</TableHead>
+              <TableHead>Organization</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -101,6 +102,7 @@ const LeaderBoard = () => {
                 <TableCell>{item.donor}</TableCell>
                 <TableCell>{item.amount}</TableCell>
                 <TableCell>{item.donationType}</TableCell>
+                <TableCell>{item.organization}</TableCell>
               </TableRow>
             ))}
           </TableBody>

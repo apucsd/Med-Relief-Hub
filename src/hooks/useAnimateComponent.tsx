@@ -9,9 +9,10 @@ const useAnimateComponent = () => {
     visible: {
       y: 0,
       opacity: 1,
+      width: "100%",
       transition: { duration: 0.7 },
     },
-    hidden: { y: 180, opacity: 0 },
+    hidden: { y: 180, opacity: 0.8, width: "70%" },
   };
   useEffect(() => {
     if (inView) {

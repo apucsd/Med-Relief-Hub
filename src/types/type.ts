@@ -6,3 +6,12 @@ export type TSupply = {
   image: string;
   title: string;
 };
+export type TComment = {
+  _id: string;
+  email: string;
+  commenterName: string;
+  comments: string;
+  timestamp: string;
+
+  commenterImage?: string;
+};

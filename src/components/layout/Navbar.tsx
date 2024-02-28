@@ -47,7 +47,7 @@ const Navbar = () => {
       >
         <hr className="mt-4 w-full lg:hidden" />
         <div className="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-          <ul className="flex text-center lg:space-x-4 w-full  flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
+          <ul className="flex uppercase text-center lg:space-x-4 w-full  flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
