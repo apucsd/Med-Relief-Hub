@@ -84,7 +84,7 @@ const LeaderBoard = () => {
       <br />
 
       <div>
-        <Table className=" text-black">
+        <Table>
           <TableCaption>Top donor list here.</TableCaption>
           <TableHeader>
             <TableRow>
@@ -108,7 +108,7 @@ const LeaderBoard = () => {
           </TableBody>
           <TableFooter>
             <TableRow>
-              <TableCell colSpan={3} className="text-red-500">
+              <TableCell colSpan={4} className="text-red-500">
                 Total Donar Numbers
               </TableCell>
               <TableCell className="text-right">

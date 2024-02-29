@@ -15,20 +15,6 @@ const Navbar = () => {
       key: "1",
       label: (
         <Link
-          className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
-          to="/about-us"
-        >
-          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
-            About Us
-          </span>
-        </Link>
-      ),
-    },
-
-    {
-      key: "2",
-      label: (
-        <Link
           className="group uppercase font-semibold transition-all duration-300 ease-in-out"
           to="/leaderboard"
         >
@@ -39,7 +25,7 @@ const Navbar = () => {
       ),
     },
     {
-      key: "3",
+      key: "2",
       label: (
         <Link
           className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
@@ -47,6 +33,32 @@ const Navbar = () => {
         >
           <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             Volunteer
+          </span>
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link
+          className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
+          to="/contact-us"
+        >
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            Contact Us
+          </span>
+        </Link>
+      ),
+    },
+    {
+      key: "4",
+      label: (
+        <Link
+          className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
+          to="/about-us"
+        >
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            About Us
           </span>
         </Link>
       ),

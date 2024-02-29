@@ -60,28 +60,28 @@ const VolunteerRecruitmentForm = () => {
           <Row gutter={16}>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="First Name"
+                label={<label style={{ color: "#374151" }}>First Name</label>}
                 name="firstName"
                 rules={[
                   { required: true, message: "Please enter your first name" },
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your first name"
                 />
               </Form.Item>
             </Col>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="Last Name"
+                label={<label style={{ color: "#374151" }}>Last Name</label>}
                 name="lastName"
                 rules={[
                   { required: true, message: "Please enter your last name" },
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your last name"
                 />
               </Form.Item>
@@ -90,29 +90,26 @@ const VolunteerRecruitmentForm = () => {
           <Row gutter={16}>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="E-mail"
+                label={<label style={{ color: "#374151" }}>E-mail</label>}
                 name="email"
                 rules={[
                   { required: true, message: "Please enter your email" },
                   { type: "email", message: "Please enter a valid email" },
                 ]}
               >
-                <Input
-                  className="h-10 "
-                  placeholder="Please enter your email"
-                />
+                <Input className="h-10" placeholder="Please enter your email" />
               </Form.Item>
             </Col>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="Phone"
+                label={<label style={{ color: "#374151" }}>Phone</label>}
                 name="phone"
                 rules={[
                   { required: true, message: "Please enter your phone number" },
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your phone number"
                 />
               </Form.Item>
@@ -122,28 +119,28 @@ const VolunteerRecruitmentForm = () => {
           <Row gutter={16}>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="Country"
+                label={<label style={{ color: "#374151" }}>Country</label>}
                 name="country"
                 rules={[
                   { required: true, message: "Please select your country" },
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your country"
                 />
               </Form.Item>
             </Col>
             <Col span={24} lg={{ span: 12 }}>
               <Form.Item
-                label="Address"
+                label={<label style={{ color: "#374151" }}>Address</label>}
                 name="address"
                 rules={[
                   { required: true, message: "Please enter your address" },
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your address"
                 />
               </Form.Item>
@@ -153,16 +150,16 @@ const VolunteerRecruitmentForm = () => {
           <Row gutter={16}>
             <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
               <Form.Item
-                label="City"
+                label={<label style={{ color: "#374151" }}>City</label>}
                 name="city"
                 rules={[{ required: true, message: "Please enter your city" }]}
               >
-                <Input className="h-10 " placeholder="Please enter your city" />
+                <Input className="h-10" placeholder="Please enter your city" />
               </Form.Item>
             </Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
               <Form.Item
-                label="Image"
+                label={<label style={{ color: "#374151" }}>Image</label>}
                 name="image"
                 rules={[{ required: true, message: "Please enter image" }]}
               >
@@ -177,7 +174,9 @@ const VolunteerRecruitmentForm = () => {
           <Row gutter={16}>
             <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
               <Form.Item
-                label="State / Province"
+                label={
+                  <label style={{ color: "#374151" }}>State / Province</label>
+                }
                 name="state"
                 rules={[
                   {
@@ -187,14 +186,16 @@ const VolunteerRecruitmentForm = () => {
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your state/province"
                 />
               </Form.Item>
             </Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
               <Form.Item
-                label="Postal / Zip Code"
+                label={
+                  <label style={{ color: "#374151" }}>Postal / Zip Code</label>
+                }
                 name="postalCode"
                 rules={[
                   {
@@ -204,7 +205,7 @@ const VolunteerRecruitmentForm = () => {
                 ]}
               >
                 <Input
-                  className="h-10 "
+                  className="h-10"
                   placeholder="Please enter your postal/zip code"
                 />
               </Form.Item>
@@ -213,7 +214,7 @@ const VolunteerRecruitmentForm = () => {
 
           <div className="flex justify-end">
             <Form.Item>
-              <Button className="h-10 " variant={"default"} type="submit">
+              <Button className="h-10" variant={"default"} type="submit">
                 Be A Volunteer
               </Button>
             </Form.Item>

@@ -16,6 +16,7 @@ import CreateTestimonial from "@/pages/admin/CreateTestimonial";
 import Community from "@/pages/community/Community";
 import AboutPage from "@/pages/about/AboutPage";
 import VolunteerRecruitmentForm from "@/components/forms/VolunteerRecruitmentForm";
+import ContactUs from "@/pages/contact/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutPage />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "/volunteer",

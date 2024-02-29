@@ -2,6 +2,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/button";
 import useAnimateComponent from "@/hooks/useAnimateComponent";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const { ref, variants, control } = useAnimateComponent();
@@ -93,7 +94,9 @@ const AboutUs = () => {
                   Collaborations worldwide.
                 </li>
               </ul>
-              <Button>See More</Button>
+              <Link to={"/contact-us"}>
+                <Button>See More</Button>
+              </Link>
             </div>
 
             <div className="relative w-full px-4 mb-10 md:w-1/2 lg:mb-0">
