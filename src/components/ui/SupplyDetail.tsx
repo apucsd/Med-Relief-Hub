@@ -3,10 +3,14 @@ import { TSupply } from "@/types/type";
 import { useParams } from "react-router-dom";
 import { Button } from "./button";
 import { toast } from "sonner";
+import Loading from "./Loading";
 
 const SupplyDetail = () => {
   const { id } = useParams();
-  const { data } = useGetSingleSupplyQuery(id);
+  const { data,isFetching } = useGetSingleSupplyQuery(id);
+  if(isFetching){
+    return <Loading />
+  }
   const supply: TSupply = data?.result;
   return (
     <div className="container py-8">

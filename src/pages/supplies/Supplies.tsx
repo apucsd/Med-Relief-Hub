@@ -35,10 +35,10 @@ const Supplies = () => {
               />
             </div>
             <div className="col-span-2 px-4 py-6">
-              <h3 className="text-xl truncate font-semibold text-gray-800">
+              <h3 className="text-xl truncate font-semibold text-slate-700">
                 {item.title}
               </h3>
-              <p className="mt-2 truncate text-sm text-gray-400">
+              <p className="mt-2 truncate text-sm text-slate-400">
                 {item.description}
               </p>
 
@@ -48,7 +48,7 @@ const Supplies = () => {
                 </div>
                 <div className="mr-2 rounded  px-2.5 py-0.5 text-xs font-semibold">
                   <p>
-                    <span className="text-2xl font-bold text-slate-900">
+                    <span className="text-2xl font-bold text-slate-700">
                       ${item.amount}
                     </span>
                     <span className="text-sm text-slate-900">per pack</span>

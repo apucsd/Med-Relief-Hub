@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <div className="flex items-center h-screen w-[100%] justify-center">
       <svg
-        className="h-20 w-20 animate-spin stroke-gray-500"
+        className="size-12 animate-spin stroke-primary"
         viewBox="0 0 256 256"
       >
         <line
@@ -78,7 +78,7 @@ export default function Loading() {
           strokeWidth={24}
         ></line>
       </svg>
-      <span className="text-4xl font-medium text-gray-500">Loading...</span>
+      <span className="text-4xl font-medium text-primary">Loading...</span>
     </div>
   );
 }

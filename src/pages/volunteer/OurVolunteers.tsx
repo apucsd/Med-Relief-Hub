@@ -1,13 +1,15 @@
 import Loading from "@/components/ui/Loading";
 import { useGetVolunteerQuery } from "@/redux/features/volunteer/volunteerApi";
 import { TVolunteer } from "@/types/type";
+import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
 const OurVolunteers = () => {
   const { data, isFetching } = useGetVolunteerQuery(undefined);
   if (isFetching) {
     return <Loading />;
   }
-  console.log(data);
+
   return (
     <div>
       <section className="">
@@ -20,20 +22,25 @@ const OurVolunteers = () => {
               </p>
             </div>
           </div>
-          <div className="grid my-10 grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+
+          <Marquee className="my-5" speed={50}>
             {data?.result?.map((item: TVolunteer) => (
-              <div
-                key={item._id}
-                className="block group md:col-span-2 lg:col-span-1 "
-              >
-                <div className="relative mb-6">
+              <div className="block group w-64 border-2 m-1 p-5">
+                <motion.div
+                  whileHover={{
+                    scale: 1.2,
+
+                    transition: { duration: 0.3 },
+                  }}
+                  className="relative mb-6"
+                >
                   <img
                     src={item.image}
-                    alt="Antonio image"
+                    alt=""
                     className="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
                   />
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
+                </motion.div>
+                <h4 className="text-xl font-semibold text-slate-700 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
                   {item.firstName} {item.lastName}
                 </h4>
                 <span className="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
@@ -41,7 +48,7 @@ const OurVolunteers = () => {
                 </span>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </section>
     </div>
