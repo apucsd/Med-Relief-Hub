@@ -12,7 +12,7 @@ export type TComment = {
   commenterName: string;
   comments: string;
   timestamp: string;
-
+  image?: string;
   commenterImage?: string;
 };
 export type TTestimonial = {

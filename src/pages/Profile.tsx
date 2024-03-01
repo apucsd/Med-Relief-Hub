@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import { useAppSelector } from "@/redux/hook";
 
 import UpdateProfileModal from "@/components/ui/UpdateProfileModal";
@@ -10,6 +11,7 @@ import {
 import { useAppSelector } from "@/redux/hook";
 import { Camera } from "lucide-react";
 import { ChangeEvent, useState } from "react";
+import { toast } from "sonner";
 
 const Profile = () => {
   const [updateUser] = useUpdateUserMutation();
@@ -33,13 +35,15 @@ const Profile = () => {
       },
     };
 
-    const res = await updateUser(updatedUser);
-    console.log(res);
+    const res: any = await updateUser(updatedUser);
+    if (res?.data?.success) {
+      toast.success("Profile updated successfully");
+    }
   };
   return (
     <main className="container  my-20">
       <div>
-        <div className="md:grid hidden  h-60 bg-[#5E9BE5] md:grid-cols-5 mt-20 gap-5 justify-center overflow-hidden place-items-center"></div>
+        <div className="md:grid hidden b w-full  h-60 bg-[#5E9BE5] md:grid-cols-5 mt-20 gap-5 justify-center overflow-hidden place-items-center"></div>
         <section className="relative py-16">
           <div className=" mx-auto ">
             <div className="relative  flex flex-col min-w-0 break-words  w-full mb-6 shadow-xl rounded-lg md:-mt-20 ">
@@ -82,7 +86,7 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
+                  <div className="w-full order-1 lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
                     <div className="py-6 px-3 mt-32 sm:mt-0">
                       <Button
                         onClick={showModal}
@@ -97,7 +101,7 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-4/12 px-4 lg:order-1">
+                  <div className="w-full lg:w-4/12 px-4 lg:order-1 order-2">
                     <div className="flex justify-center py-4 lg:pt-4 pt-8">
                       <div className="mr-4 p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide ">
@@ -126,17 +130,24 @@ const Profile = () => {
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2  font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg " />
-                    {userData?.address}
+                    {userData?.address
+                      ? userData?.address
+                      : "Please Update address"}
                   </div>
                   <div className="mb-2  mt-10">
-                    Occupation : {userData?.occupation}
+                    Occupation :{" "}
+                    {userData?.occupation
+                      ? userData?.occupation
+                      : "Please Update occupation"}
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-200 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed ">
-                        {userData?.biography}
+                        {userData?.biography
+                          ? userData?.biography
+                          : "Please Update biography"}
                       </p>
                     </div>
                   </div>

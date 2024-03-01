@@ -30,7 +30,7 @@ const Community = () => {
     const data = editor.getData();
     setComments(data);
   };
-
+  console.log(commentsFromDB);
   const handlePostComments = () => {
     if (!user) {
       toast.error("Please login before posting comments");
@@ -44,7 +44,7 @@ const Community = () => {
       email: user?.email,
       comments,
     };
-    console.log(commentsData);
+
     createComments(commentsData);
   };
   return (
@@ -60,7 +60,7 @@ const Community = () => {
       <div>
         <div className="my-10 ">
           {commentsFromDB?.result?.map((item: TComment) => (
-            <CommentCard {...item} />
+            <CommentCard key={item._id} {...item} />
           ))}
         </div>
 

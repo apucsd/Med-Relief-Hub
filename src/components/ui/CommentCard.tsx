@@ -9,7 +9,7 @@ const CommentCard = ({
   commenterName,
   timestamp,
   comments,
-  commenterImage,
+  image,
 }: TComment) => {
   const [like, setLike] = useState(false);
   return (
@@ -20,9 +20,9 @@ const CommentCard = ({
             <img
               className="h-10 w-10 rounded-full"
               src={
-                commenterImage
-                  ? commenterImage
-                  : "https://via.placeholder.com/150"
+                image
+                  ? image
+                  : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
               }
               alt="Avatar"
             />
