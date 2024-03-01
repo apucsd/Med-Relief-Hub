@@ -75,15 +75,15 @@ const Banner = () => {
             >
               <Link to="/dashboard">
                 <AnimatedButton>
-                  <Button>Let's get started</Button>
+                  <Button variant="secondary">Let's get started</Button>
                 </AnimatedButton>
               </Link>
 
               <Link to="/supplies">
                 <AnimatedButton>
                   <Button
-                    variant={"outline"}
-                    className="flex items-center my-3 md:my-0 justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
+                    variant={"default"}
+                    className="flex text-white items-center my-3 md:my-0 justify-center gap-x-2 py-2 px-4  font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
                   >
                     Give Support
                     <svg

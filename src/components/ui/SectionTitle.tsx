@@ -18,9 +18,9 @@ const SectionTitle = ({ name, title, subTitle, className }: TSectionProps) => {
       </h2>
       <div className="flex justify-center">
         <div className="flex justify-center w-32 mt-1 mb-6 overflow-hidden rounded md:mx-auto md:mb-5">
-          <div className="flex-1 h-2 bg-blue-200"></div>
           <div className="flex-1 h-2 bg-primary"></div>
-          <div className="flex-1 h-2 bg-blue-300"></div>
+          <div className="flex-1 h-2 bg-secondary"></div>
+          <div className="flex-1 h-2 bg-primary"></div>
         </div>
       </div>
       {subTitle && <p className="text-sm leading-relaxed">{subTitle}</p>}
