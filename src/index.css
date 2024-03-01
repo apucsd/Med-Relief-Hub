@@ -83,4 +83,13 @@
     font-style: normal;
     scroll-behavior: smooth;
   }
+  .bg-header {
+    background: url("images/donation2.jpg") center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgba(0, 0, 0, 0.274); */
+    color: white;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+  }
 }

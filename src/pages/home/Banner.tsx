@@ -2,24 +2,10 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useAppSelector } from "@/redux/hook";
 
 const Banner = () => {
-  const imageControl = {
-    hidden: {
-      opacity: 0.7,
-      x: 300,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
+  const { mode } = useAppSelector((state) => state.theme);
 
   const container = {
     hidden: { opacity: 0 },
@@ -44,23 +30,22 @@ const Banner = () => {
   };
   return (
     <motion.div
+      style={{
+        backgroundColor: `${
+          mode === "light" ? "rgba(0, 0, 0, 0.400)" : "rgba(0, 0, 0, 0.9)"
+        }`,
+      }}
       variants={container}
       initial="hidden"
       animate="show"
-      className="container h-screen flex flex-col justify-center "
+      className="container transition-all duration-1000 h-screen bg-header w-full flex flex-col justify-center "
     >
       <section>
         <div className="max-w-screen-xl h-full mx-auto  gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
-            <motion.h1
-              variants={item}
-              className="text-sm text-primary font-medium"
-            >
-              Empowering Communities, Saving Lives:
-            </motion.h1>
             <motion.h2
               variants={item}
-              className="text-3xl  font-extrabold md:text-5xl"
+              className="text-4xl  font-extrabold md:text-6xl"
             >
               Join Us in Ensuring Vital Health Supplies.
             </motion.h2>
@@ -83,7 +68,7 @@ const Banner = () => {
                 <AnimatedButton>
                   <Button
                     variant={"default"}
-                    className="flex text-white items-center my-3 md:my-0 justify-center gap-x-2 py-2 px-4  font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
+                    className="flex text-white items-center my-3 md:my-0 justify-center gap-x-2 py-2 px-4 border-none  rounded font-medium duration-150 active:bg-gray-100 border  md:inline-flex"
                   >
                     Give Support
                     <svg
@@ -103,7 +88,7 @@ const Banner = () => {
               </Link>
             </motion.div>
           </div>
-          <motion.div
+          {/* <motion.div
             variants={imageControl}
             initial="hidden"
             animate="visible"
@@ -114,7 +99,7 @@ const Banner = () => {
               className=" md:rounded-tl-[108px] md:h-[360px] w-full"
               alt=""
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
     </motion.div>

@@ -10,6 +10,9 @@ import { ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const { user } = useAppSelector((state) => state.auth);
+
+  console.log(user);
+  const { mode } = useAppSelector((state) => state.theme);
   const items: MenuProps["items"] = [
     {
       key: "1",
@@ -18,7 +21,7 @@ const Navbar = () => {
           className="group uppercase font-semibold transition-all duration-300 ease-in-out"
           to="/leaderboard"
         >
-          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             Leaderboard
           </span>
         </Link>
@@ -31,7 +34,7 @@ const Navbar = () => {
           className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
           to="/volunteer"
         >
-          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             Volunteer
           </span>
         </Link>
@@ -44,7 +47,7 @@ const Navbar = () => {
           className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
           to="/contact-us"
         >
-          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             Contact Us
           </span>
         </Link>
@@ -57,7 +60,7 @@ const Navbar = () => {
           className="group  font-semibold uppercase transition-all duration-300 ease-in-out"
           to="/about-us"
         >
-          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
             About Us
           </span>
         </Link>
@@ -65,7 +68,13 @@ const Navbar = () => {
     },
   ];
   return (
-    <header className="container text-center font-semibold relative mx-auto flex flex-col px-4 py-4 lg:flex-row lg:items-center">
+    <header
+      className={` ${
+        mode === "dark"
+          ? "bg-primary/10"
+          : "bg-primary duration-1000 transition-all"
+      } container  text-white  drop-shadow-sm text-center duration-1000 transition-all  relative mx-auto flex flex-col px-4 py-2 lg:flex-row lg:items-center`}
+    >
       <Link
         to="/"
         className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
@@ -108,7 +117,7 @@ const Navbar = () => {
                 className="group  transition-all duration-300 ease-in-out"
                 to="/"
               >
-                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                   Home
                 </span>
               </Link>
@@ -118,7 +127,7 @@ const Navbar = () => {
                 className="group  transition-all duration-300 ease-in-out"
                 to="/supplies"
               >
-                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                   All Supplies
                 </span>
               </Link>
@@ -129,7 +138,7 @@ const Navbar = () => {
                 className="group  transition-all duration-300 ease-in-out"
                 to="/community"
               >
-                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                <span className=" bg-left-bottom pb-2 bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                   Community
                 </span>
               </Link>
@@ -152,6 +161,9 @@ const Navbar = () => {
                 </div>
               </Dropdown>
             </li>
+            <li>
+              <SelectTheme />
+            </li>
 
             <li>
               {user ? (
@@ -160,12 +172,11 @@ const Navbar = () => {
                 </div>
               ) : (
                 <Link to="/login">
-                  <Button>Login</Button>
+                  <Button variant="secondary" className="rounded-lg px-8">
+                    Login
+                  </Button>
                 </Link>
               )}
-            </li>
-            <li>
-              <SelectTheme />
             </li>
           </ul>
         </div>

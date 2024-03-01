@@ -25,16 +25,18 @@ const SelectTheme = () => {
       onValueChange={(value: "light" | "dark") => handleSelectTheme(value)}
     >
       <SelectTrigger
-        className={`${mode === "light" ? "bg-white" : "bg-black text-white"}`}
+        className={`${
+          mode === "light" ? "bg-" : "bg-black text-white"
+        } rounded-lg border-none outline-none "`}
       >
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex uppercase justify-center items-center gap-2">
           {mode === "light" ? (
             <>
-              <Sun className="size-4 " /> <span>Light</span>
+              <Sun className="size-5 " /> <span>Light</span>
             </>
           ) : (
             <>
-              <Moon className="size-4 " /> <span>Dark</span>
+              <Moon className="size-5 " /> <span>Dark</span>
             </>
           )}
         </div>

@@ -19,7 +19,7 @@ const Testimonial = () => {
       variants={variants}
       animate={control}
       initial="hidden"
-      className="container"
+      className="container bg-primary/0 py-10"
     >
       <div className="text-center max-w-xl mx-auto mb-12">
         <SectionTitle

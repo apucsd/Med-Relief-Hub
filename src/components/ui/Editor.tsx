@@ -12,7 +12,7 @@ const Editor = ({ handleEditorChange }: TEditorProps) => {
     <div className="">
       <CKEditor
         editor={ClassicEditor}
-        data="<p>Post comments of appreciation for the support you've received!</p>"
+        data="<p></p>"
         onChange={(event, editor) => handleEditorChange(event, editor)}
       />
     </div>

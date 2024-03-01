@@ -7,7 +7,11 @@ import { Share2 } from "lucide-react";
 const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
   const varient = {
     initial: { rotate: 0, scale: 1 },
-    animate: { rotate: 1, scale: 1.2, transition: { duration: 0.2 } },
+    animate: {
+      rotate: 0.6,
+      scale: 1.1,
+      transition: { duration: 0.2, type: "spring", stiffness: 100 },
+    },
   };
   return (
     <motion.div
@@ -23,7 +27,7 @@ const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
       />
       <motion.div
         variants={varient}
-        className="md:w-[338px] w-full h-[200px] mx-auto text-slate-800  md:absolute top-[30%] space-y-2 left-4  bg-white p-4 md:rounded shadow-lg"
+        className="md:w-[338px] w-full h-[200px] mx-auto text-slate-800  md:absolute top-[30%] space-y-2 left-4  backdrop:blur-2xl bg-white/50 p-4 md:rounded shadow-lg"
       >
         <div className="bg-[#F2F4F7] w-fit rounded p-0.5">
           <h1 className="text-green-500 text-sm drop-shadow-sm">{category}</h1>

@@ -11,10 +11,14 @@ import { Modal } from "antd";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 
 import { toast } from "sonner";
-import { useAppDispatch } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { LayoutDashboard, LogOut, User } from "lucide-react";
+import { useGetUserQuery } from "@/redux/features/auth/authApi";
 const { confirm } = Modal;
 const Sidebar = () => {
+  const { user } = useAppSelector((state) => state.auth);
+  const { data: userData } = useGetUserQuery(user?.email);
+
   const dispatch = useAppDispatch();
   const showDeleteConfirm = () => {
     confirm({
@@ -34,7 +38,11 @@ const Sidebar = () => {
       <DrawerTrigger asChild>
         <span className="relative inline-block">
           <img
-            src="https://randomuser.me/api/portraits/women/50.jpg"
+            src={`${
+              userData?.data?.image
+                ? userData?.data?.image
+                : "https://randomuser.me/api/portraits/women/50.jpg"
+            }`}
             className="object-cover size-9 hover:cursor-pointer rounded-full "
           />
           <span className="absolute animate-pulse top-0 right-0 size-3 bg-green-500 border-2 border-white rounded-full"></span>
