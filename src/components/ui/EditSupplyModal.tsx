@@ -48,15 +48,6 @@ const EditSupplyModal = ({ id }: { id: string }) => {
         <FileEdit className="size-4 text-primary" />
       </Button>
       <Modal
-        style={{
-          backgroundColor: "white",
-          margin: "auto",
-          overflowY: "scroll",
-          height: "100%",
-          padding: "0px",
-          top: 20,
-          maxHeight: "90vh",
-        }}
         footer={null}
         okButtonProps={{ style: { backgroundColor: "#03ACF2" } }}
         open={isModalOpen}
