@@ -33,11 +33,13 @@ const Community = () => {
   console.log(commentsFromDB);
   const handlePostComments = () => {
     if (!user) {
-      toast.error("Please login before posting comments");
+      toast.error("Please login before posting comments", { duration: 1000 });
       return navigate("/login");
     }
     if (!comments) {
-      return toast.error("Please write some comments first");
+      return toast.error("Please write some comments first", {
+        duration: 1000,
+      });
     }
 
     const commentsData = {
@@ -49,12 +51,12 @@ const Community = () => {
   };
   return (
     <div className="container my-10">
-      <div className=" h-60 bg-[#5E9BE5] dark:bg-black flex justify-center items-center">
+      <div className=" h-60 bg-secondary dark:bg-black flex justify-center items-center">
         <div className="text-center space-y-2 text-white ">
-          <h1 className="text-5xl font-semibold">Community Gratitude Wall</h1>
-          <p className="  text-gray-200">
-            Have a look to the volunteer of our organization
-          </p>
+          <h1 className="text-3xl md:text-5xl font-semibold">
+            Community Gratitude Wall
+          </h1>
+          <p>Have a look to the volunteer of our organization</p>
         </div>
       </div>
       <div>

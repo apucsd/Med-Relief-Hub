@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { ChangeEvent, useState } from "react";
 import getImageURL from "@/lib/getImageURL";
 import { useCreateVolunteerMutation } from "@/redux/features/volunteer/volunteerApi";
-import { downLoadPNG } from "@/lib/downloadPDF";
+import { downLoadPNG } from "@/lib/downloadPNG";
 
 const VolunteerRecruitmentForm = () => {
   const [createVolunteer] = useCreateVolunteerMutation();
@@ -31,8 +31,8 @@ const VolunteerRecruitmentForm = () => {
     setImage(imageURL);
   };
   return (
-    <div id="volunteer_form">
-      <div className="grid bg-[#5E9BE5] md:grid-cols-5 gap-5 justify-center overflow-hidden place-items-center">
+    <div id="volunteer_form" className="my-10 container">
+      <div className="grid bg-secondary md:grid-cols-5 gap-5 justify-center overflow-hidden place-items-center">
         <div className="col-span-12 md:col-span-2">
           <img
             className="object-cover size-60 w-full mx-auto"
@@ -42,9 +42,7 @@ const VolunteerRecruitmentForm = () => {
         </div>
         <div className="col-span-12 text-center md:col-span-3 space-y-2 text-white ">
           <h1 className="text-4xl ">VOLUNTEER RECRUITMENT</h1>
-          <p className="  text-gray-200">
-            Fill in the form below to volunteer to our organization
-          </p>
+          <p>Fill in the form below to volunteer to our organization</p>
         </div>
       </div>
       <div className="w-full md:max-w-4xl mx-auto">
@@ -214,7 +212,7 @@ const VolunteerRecruitmentForm = () => {
 
           <div className="flex justify-end">
             <Form.Item>
-              <Button className="h-10" variant={"default"} type="submit">
+              <Button className="h-10" variant={"secondary"} type="submit">
                 Be A Volunteer
               </Button>
             </Form.Item>

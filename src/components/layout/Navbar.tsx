@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
-import { useAppSelector } from "@/redux/hook";
 
-import Sidebar from "./Sidebar";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 
-import SelectTheme from "../SelectTheme";
 import { Dropdown, MenuProps } from "antd";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import SelectTheme from "../SelectTheme";
+import Sidebar from "./Sidebar";
+import { Button } from "../ui/button";
+import { logoutUser } from "@/redux/features/auth/authSlice";
+import { toast } from "sonner";
+import { Modal } from "antd";
+const { confirm } = Modal;
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const { user } = useAppSelector((state) => state.auth);
 
-  console.log(user);
-  const { mode } = useAppSelector((state) => state.theme);
+  // const { mode } = useAppSelector((state) => state.theme);
   const items: MenuProps["items"] = [
     {
       key: "1",
@@ -67,51 +74,70 @@ const Navbar = () => {
       ),
     },
   ];
+  const navigationMenu = [
+    {
+      text: "Home",
+      link: "/",
+    },
+    {
+      text: "All Supplies",
+      link: "/supplies",
+    },
+    {
+      text: "Community",
+      link: "/community",
+    },
+    {
+      text: "Dashboard",
+      link: "/dashboard",
+    },
+    {
+      text: "Profile",
+      link: "/profile",
+    },
+
+    {
+      text: "Contact Us",
+      link: "/contact-us",
+    },
+    {
+      text: "About Us",
+      link: "/about-us",
+    },
+  ];
+
+  const dispatch = useAppDispatch();
+  const showDeleteConfirm = () => {
+    confirm({
+      title: "Are you sure logout this?",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk() {
+        dispatch(logoutUser());
+        toast.success("Logout successful", { duration: 1000 });
+      },
+    });
+  };
   return (
-    <header
-      className={` ${
-        mode === "dark"
-          ? "bg-primary/10"
-          : "bg-primary duration-1000 transition-all"
-      } container  text-white  drop-shadow-sm text-center duration-1000 transition-all  relative mx-auto flex flex-col px-4 py-2 lg:flex-row lg:items-center`}
-    >
-      <Link
-        to="/"
-        className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
-      >
-        <span className="flex gap-1 justify-center items-center bold">
-          <img src="logo.svg" alt="" />
-          MedReliefHub
-        </span>
-      </Link>
-      <input type="checkbox" className="peer hidden" id="navbar-open" />
-      <label
-        className="absolute top-5 right-5 cursor-pointer lg:hidden"
-        htmlFor="navbar-open"
-      >
-        <svg
-          color="#FF6154"
-          className="h-7 w-7"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.5"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </label>
-      <nav
-        aria-label="Header Navigation"
-        className="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-24 lg:max-h-full lg:flex-row"
-      >
-        <hr className="mt-4 w-full lg:hidden" />
-        <div className="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-          <ul className="flex uppercase text-center lg:space-x-4 w-full  flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
+    <nav className="h-full w-full container">
+      <div className="flex justify-between items-center">
+        <div className=" relative">
+          <Link
+            to="/"
+            className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
+          >
+            <span className="flex gap-1 justify-center items-center bold">
+              <img src="/public/logo.svg" alt="" />
+              MedReliefHub
+            </span>
+          </Link>
+        </div>
+
+        {/* all links for md */}
+
+        <div className="hidden my-4 md:flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
+          <ul className="flex uppercase z-[9999] text-center lg:space-x-4 w-full  flex-col items-center justify-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
             <li>
               <Link
                 className="group  transition-all duration-300 ease-in-out"
@@ -164,7 +190,6 @@ const Navbar = () => {
             <li>
               <SelectTheme />
             </li>
-
             <li>
               {user ? (
                 <div title={user.email}>
@@ -172,7 +197,10 @@ const Navbar = () => {
                 </div>
               ) : (
                 <Link to="/login">
-                  <Button variant="secondary" className="rounded-lg px-8">
+                  <Button
+                    variant="outline"
+                    className="rounded-lg px-8 text-gray-800 font-semibold  uppercase"
+                  >
                     Login
                   </Button>
                 </Link>
@@ -180,9 +208,88 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </nav>
-    </header>
+
+        {/* all links for md */}
+        {/* sidebar hamburger */}
+        <div
+          onClick={() => setOpen(!open)}
+          className="relative md:hidden hover:cursor-pointer flex flex-col gap-1 transition-all duration-300 "
+        >
+          <div className="flex flex-col group justify-between gap-1">
+            <div className="h-0.5 bg-gray-700 w-6 "></div>
+            <div className="h-0.5 bg-gray-700 w-5 group-hover:w-6 transition-all duration-300"></div>
+            <div className="h-0.5 bg-gray-700 w-3 group-hover:w-6 transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{
+                type: "spring",
+                bounce: 0,
+                duration: 0.4,
+                delayChildren: 0.2,
+              }}
+              className="fixed md:hidden z-[99999] overflow-y-scroll bg-secondary text-white shadow-lg top-0 right-0 w-full max-w-[280px] h-screen p-5"
+            >
+              <button
+                onClick={() => setOpen(!open)}
+                className="bg-white hover:cursor-pointer text-gray-700 text-lg h-8 w-8 block  rounded-full"
+              >
+                &times;
+              </button>
+              <div>
+                {/* all link */}
+                <hr className="my-4" />
+                <motion.ul className="flex uppercase flex-col items-center  h-screen gap-10 justify-start">
+                  {navigationMenu.map((menu, i) => (
+                    <Link key={i} to={menu.link} onClick={() => setOpen(!open)}>
+                      {menu.text}
+                    </Link>
+                  ))}
+                  <li className="">
+                    {user ? (
+                      <Button
+                        onClick={() => {
+                          setOpen(!open);
+                          showDeleteConfirm();
+                        }}
+                      >
+                        LogOut
+                      </Button>
+                    ) : (
+                      <Link
+                        onClick={() => {
+                          setOpen(!open);
+                        }}
+                        to="/login"
+                      >
+                        <Button
+                          variant="outline"
+                          className="rounded-lg px-8 text-gray-800 font-semibold  uppercase"
+                        >
+                          Login
+                        </Button>
+                      </Link>
+                    )}
+                  </li>
+                </motion.ul>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
 export default Navbar;
+{
+  /*  */
+}

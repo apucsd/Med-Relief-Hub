@@ -25,9 +25,10 @@ const SelectTheme = () => {
       onValueChange={(value: "light" | "dark") => handleSelectTheme(value)}
     >
       <SelectTrigger
+        style={{ fontFamily: "Quicksand!", fontStyle: "italic!" }}
         className={`${
           mode === "light" ? "bg-" : "bg-black text-white"
-        } rounded-lg border-none outline-none "`}
+        } rounded-lg border-none  outline-none text-[16px] font-semibold "`}
       >
         <div className="flex uppercase justify-center items-center gap-2">
           {mode === "light" ? (
@@ -42,7 +43,7 @@ const SelectTheme = () => {
         </div>
       </SelectTrigger>
       <SelectContent>
-        <SelectGroup>
+        <SelectGroup className="z-[9999]">
           <SelectLabel>Select Theme</SelectLabel>
           <SelectItem value="light">
             <div className="flex justify-center items-center gap-2">

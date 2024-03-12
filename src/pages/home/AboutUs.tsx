@@ -14,14 +14,9 @@ const AboutUs = () => {
       animate={control}
       initial="hidden"
       id="about"
-      className="container bg-secondary/ relative overflow-hidden py-10"
+      className="container bg-secondary/ relative h-full py-10"
     >
-      <img
-        className="w-[1200px] h-[700px] -z-30 absolute -top-1/2 -right-[50%] "
-        src="Oval.svg"
-        alt=""
-      />
-      <section className="flex items-center  lg:h-screen ">
+      <section className="flex items-center   ">
         <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
           <SectionTitle name="About Us" title=" What we do" />
 
@@ -34,7 +29,7 @@ const AboutUs = () => {
               </p>
               <ul className="mb-10">
                 <li className="flex items-center mb-4 text-base text-gray-600 dark:text-gray-400">
-                  <span className="mr-3 text-primary dark:text-blue-400">
+                  <span className="mr-3 text-secondary dark:text-blue-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -49,7 +44,7 @@ const AboutUs = () => {
                   Swift and effective disaster relief.
                 </li>
                 <li className="flex items-center mb-4 text-base text-gray-600 dark:text-gray-400">
-                  <span className="mr-3 text-primary dark:text-blue-400">
+                  <span className="mr-3 text-secondary dark:text-blue-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -64,7 +59,7 @@ const AboutUs = () => {
                   Our journey in humanitarian aid.
                 </li>
                 <li className="flex items-center mb-4 text-base text-gray-600 dark:text-gray-400">
-                  <span className="mr-3 text-primary dark:text-blue-400">
+                  <span className="mr-3 text-secondary dark:text-blue-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -79,7 +74,7 @@ const AboutUs = () => {
                   Meet the passionate individuals.
                 </li>
                 <li className="flex items-center mb-4 text-base text-gray-600 dark:text-gray-400">
-                  <span className="mr-3 text-primary dark:text-blue-400">
+                  <span className="mr-3 text-secondary dark:text-blue-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -94,18 +89,53 @@ const AboutUs = () => {
                   Collaborations worldwide.
                 </li>
               </ul>
-              <Link to={"/contact-us"}>
-                <Button>See More</Button>
+              <Link to={"/about-us"}>
+                <Button className="h-9 px-5" variant="secondary">
+                  See More{" "}
+                </Button>
               </Link>
             </div>
 
             <div className="relative w-full px-4 mb-10 md:w-1/2 lg:mb-0">
+              <motion.div
+                initial={{ y: 30 }}
+                animate={{
+                  y: 0,
+                  transition: {
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  },
+                }}
+                className="text-white absolute z-[9999] -bottom-10 -start-5 rounded-md text-center p-2 md:p-5 bg-secondary w-fit"
+              >
+                <h1 className="text-2xl">
+                  <span className="text-4xl md:text-6xl font-semibold">
+                    10+
+                  </span>
+                  <br /> Years of Service
+                </h1>
+              </motion.div>
               <img
-                src="https://apadm.org/cms/wp-content/uploads/2023/12/bang202111_3.jpeg"
+                src="/images/donation10.jpg"
                 alt=""
                 className="relative z-40 object-cover w-full md:rounded-tl-[108px] md:h-96 h-44"
               />
-              <div className="absolute top-0 right-0 items-center justify-center hidden -mt-16 lg:inline-flex">
+
+              <motion.div
+                initial={{ y: -30 }}
+                animate={{
+                  y: 0,
+                  transition: {
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  },
+                }}
+                className="absolute top-0 right-0 items-center justify-center hidden -mt-16 lg:inline-flex"
+              >
                 <svg
                   width={290}
                   height={166}
@@ -206,7 +236,7 @@ const AboutUs = () => {
                     </linearGradient>
                   </defs>
                 </svg>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

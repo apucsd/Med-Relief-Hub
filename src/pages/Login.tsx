@@ -3,10 +3,13 @@ import RegisterForm from "@/components/forms/RegisterForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const Login = () => {
   return (
-    <div className="container my-10">
+    <div className="container grid grid-cols-12  justify-center items-center  min-h-screen">
+      <div className="md:col-span-7 col-span-12">
+        <img className="w-full" src="/public/login.svg" alt="" />
+      </div>
       <Tabs
         defaultValue="account"
-        className="w-full text-center max-w-md mx-auto"
+        className="md:col-span-5 col-span-12 w-full  text-center max-w-md mx-auto"
       >
         <TabsList className="w-full">
           <TabsTrigger
@@ -22,10 +25,18 @@ const Login = () => {
             Register
           </TabsTrigger>
         </TabsList>
-        <TabsContent className="border p-4" value="account">
+        <TabsContent
+          style={{ minHeight: "400px" }}
+          className="border p-4"
+          value="account"
+        >
           <LoginForm />
         </TabsContent>
-        <TabsContent className="border p-4" value="password">
+        <TabsContent
+          style={{ minHeight: "400px" }}
+          className="border p-4"
+          value="password"
+        >
           <RegisterForm />
         </TabsContent>
       </Tabs>

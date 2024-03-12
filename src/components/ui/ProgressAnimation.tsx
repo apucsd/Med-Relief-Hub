@@ -9,7 +9,7 @@ const ProgressAnimation = () => {
   });
   return (
     <motion.div
-      className=" h-1 fixed w-full   mx-auto bg-primary"
+      className=" h-1 fixed w-full top-0   mx-auto bg-secondary"
       style={{ scaleX, zIndex: 99999, transformOrigin: "0% 0%" }}
     />
   );

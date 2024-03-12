@@ -19,7 +19,7 @@ const Testimonial = () => {
       variants={variants}
       animate={control}
       initial="hidden"
-      className="container bg-primary/0 py-10"
+      className="container bg-primary/0 py-10 h-ful"
     >
       <div className="text-center max-w-xl mx-auto mb-12">
         <SectionTitle
@@ -31,8 +31,8 @@ const Testimonial = () => {
       <Carousel
         opts={{
           loop: true,
-          duration: 10,
-          inViewThreshold: 1,
+          // duration: 10,
+          inViewThreshold: 0,
         }}
         className="w-full"
       >
@@ -41,13 +41,26 @@ const Testimonial = () => {
             <CarouselItem key={testimonial._id}>
               <div className="my-10">
                 <div className="max-w-4xl mx-auto">
-                  <div className="grid md:grid-cols-2 items-center gap-8 max-w-4xl">
-                    <div className="mx-auto">
+                  <div className="grid md:grid-cols-2 py-5 items-center gap-8 max-w-4xl">
+                    <motion.div
+                      initial={{ y: 30 }}
+                      animate={{
+                        y: 0,
+                        transition: {
+                          duration: 3,
+
+                          repeat: Infinity,
+                          repeatType: "reverse",
+                          ease: "easeInOut",
+                        },
+                      }}
+                      className="mx-auto shadow-[-10px_20px_20px_rgba(57,209,54,1)]"
+                    >
                       <img
                         src={testimonial.image}
-                        className="w-[380px] md:h-[300px] h-[200px] rounded-lg shadow-[-20px_20px_0px_rgba(23,219,220,1)]"
+                        className="w-[380px] md:h-[300px] h-[200px] rounded-lg "
                       />
-                    </div>
+                    </motion.div>
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

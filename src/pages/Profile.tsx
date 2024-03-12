@@ -43,7 +43,7 @@ const Profile = () => {
   return (
     <main className="container  my-20">
       <div>
-        <div className="md:grid hidden b w-full  h-60 bg-[#5E9BE5] md:grid-cols-5 mt-20 gap-5 justify-center overflow-hidden place-items-center"></div>
+        <div className="md:grid hidden b w-full  h-60 bg-secondary md:grid-cols-5 mt-20 gap-5 justify-center overflow-hidden place-items-center"></div>
         <section className="relative py-16">
           <div className=" mx-auto ">
             <div className="relative  flex flex-col min-w-0 break-words  w-full mb-6 shadow-xl rounded-lg md:-mt-20 ">

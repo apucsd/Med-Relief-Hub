@@ -9,18 +9,8 @@ const States = () => {
       variants={variants}
       animate={control}
       initial="hidden"
-      className="container relative overflow-y-hidden my-10"
+      className="container overflow-y-hidden my-10"
     >
-      <img
-        className="w-[500px] h-[500px] -z-30 absolute -left-[20%] -top-1/2 "
-        src="Oval.svg"
-        alt=""
-      />
-      <img
-        className="w-[400px] h-[500px] -z-30 absolute -bottom-[30%] -right-0"
-        src="Plant.svg"
-        alt=""
-      />
       <SectionTitle name="States" title="Facts & Figures " />
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-x-6 gap-y-12 divide-x divide-gray-300">
         <div className="text-center">

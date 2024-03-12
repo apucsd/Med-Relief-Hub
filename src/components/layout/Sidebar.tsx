@@ -48,7 +48,7 @@ const Sidebar = () => {
           <span className="absolute animate-pulse top-0 right-0 size-3 bg-green-500 border-2 border-white rounded-full"></span>
         </span>
       </DrawerTrigger>
-      <DrawerContent className="h-screen overflow-y-scroll overflow-x-hidden focus-visible:outline-none right-0 left-auto mt-0 w-[300px] rounded-none">
+      <DrawerContent className="h-screen z-[9999] overflow-y-scroll overflow-x-hidden focus-visible:outline-none right-0 left-auto mt-0 w-[300px] rounded-none">
         <div className="mx-auto w-full p-5">
           <DrawerHeader>
             <Link to="/" className="flex items-center  text-2xl font-black">

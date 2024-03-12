@@ -27,6 +27,7 @@ const RegisterForm = () => {
             {...register("name")}
             name="name"
             type="name"
+            style={{ color: "#444" }}
             required
             className="w-full text-sm border-b px-4 py-3 focus-visible:outline-none"
             placeholder="Enter your username"
@@ -41,6 +42,7 @@ const RegisterForm = () => {
             name="email"
             type="email"
             required
+            style={{ color: "#444" }}
             className="w-full text-sm border-b px-4 py-3 focus-visible:outline-none"
             placeholder="Enter your email address"
           />
@@ -54,6 +56,7 @@ const RegisterForm = () => {
             name="password"
             type="password"
             required
+            style={{ color: "#444" }}
             className="w-full text-sm border-b px-4 py-3 focus-visible:outline-none"
             placeholder="Enter password"
           />

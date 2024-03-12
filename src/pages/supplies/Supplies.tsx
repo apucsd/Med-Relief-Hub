@@ -13,12 +13,10 @@ const Supplies = () => {
 
   return (
     <div className="container my-10">
-      <div className=" h-60 bg-[#5E9BE5] dark:bg-black flex justify-center items-center">
-        <div className="text-center space-y-2 text-white ">
-          <h1 className="text-5xl font-semibold">All Supplies</h1>
-          <p className="  text-gray-200">
-            Have a look to the Supplies Post of our organization
-          </p>
+      <div className=" min-h-60 bg-secondary dark:bg-black flex justify-center items-center">
+        <div className="text-center space-y-2 text-white p-2">
+          <h1 className="text-3xl md:text-5xl font-semibold">All Supplies</h1>
+          <p>Have a look to the Supplies Post of our organization</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -43,12 +41,12 @@ const Supplies = () => {
               </p>
 
               <div className="mt-2.5 mb-5 flex justify-between items-center">
-                <div className="mr-2 rounded text-black bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
+                <div className="mr-2 truncate rounded text-black bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
                   {item.category}
                 </div>
                 <div className="mr-2 rounded  px-2.5 py-0.5 text-xs font-semibold">
                   <p>
-                    <span className="text-2xl font-bold text-slate-700">
+                    <span className="text-lg md:text-2xl font-bold text-slate-700">
                       ${item.amount}
                     </span>
                     <span className="text-sm text-slate-900">per pack</span>
@@ -59,8 +57,8 @@ const Supplies = () => {
               <div className="flex justify-end">
                 <Link to={`/supplies/${item._id}`}>
                   <Button
-                    variant={"outline"}
-                    className="flex group items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
+                    variant={"secondary"}
+                    className="flex group text-white  border-none items-center justify-center gap-x-2 py-2 px-4  font-medium duration-150 active:bg-gray-100 border rounded md:inline-flex"
                   >
                     More Details
                     <svg

@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 
 const ContactUs = () => {
   return (
-    <div className="relative mx-auto w-full max-w-7xl  text-gray-700">
+    <div className="container relative mx-auto w-full max-w-7xl  text-gray-700">
       <div className="grid grid-cols-2">
         <div className="order-1 col-span-full">
           <iframe
@@ -124,7 +124,7 @@ const ContactUs = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button className="w-full" type="submit">
+              <Button variant="secondary" className="w-full" type="submit">
                 Submit
               </Button>
             </Form.Item>

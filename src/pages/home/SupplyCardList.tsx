@@ -9,6 +9,7 @@ import useAnimateComponent from "@/hooks/useAnimateComponent";
 const SupplyCardList = () => {
   const { data } = useGetSuppliesQuery(undefined);
   const { ref, variants, control } = useAnimateComponent();
+
   return (
     <motion.div
       ref={ref}
@@ -26,8 +27,8 @@ const SupplyCardList = () => {
       <div className="flex items-end justify-end">
         <div>
           <Link to="/supplies">
-            <Button variant="link" className="gap-2 text-xl mr-4">
-              See All{" "}
+            <Button variant="link" className="gap-2 mb-4 text-xl mr-5">
+              See All
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -44,9 +45,9 @@ const SupplyCardList = () => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 mt-2">
         {data?.result?.slice(0, 6)?.map((supplyPost: TSupply) => (
-          <SupplyCard {...supplyPost} key={supplyPost._id} />
+          <SupplyCard key={supplyPost._id} {...supplyPost} />
         ))}
       </div>
     </motion.div>

@@ -50,6 +50,7 @@ const LoginForm = () => {
             name="email"
             type="email"
             required
+            style={{ color: "#444" }}
             className="w-full text-sm border-b px-4 py-3 focus-visible:outline-none"
             placeholder="Enter your email address"
           />
@@ -63,6 +64,7 @@ const LoginForm = () => {
             name="password"
             type="password"
             required
+            style={{ color: "#444" }}
             className="w-full text-sm border-b px-4 py-3 focus-visible:outline-none"
             placeholder="Enter password"
           />

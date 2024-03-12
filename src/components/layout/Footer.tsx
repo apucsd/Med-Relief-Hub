@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="">
-      <div className="container p-6 mx-auto relative overflow-y-hidden">
+    <footer className="border-t container  p-6 mx-auto relative overflow-y-hidden">
+      <div className="">
         <img
           className="w-[1200px] h-[700px] -z-30 absolute -top-1/2 -left-1/2"
           src="Oval.svg"

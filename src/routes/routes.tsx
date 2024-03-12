@@ -17,6 +17,8 @@ import Community from "@/pages/community/Community";
 import AboutPage from "@/pages/about/AboutPage";
 import VolunteerRecruitmentForm from "@/components/forms/VolunteerRecruitmentForm";
 import ContactUs from "@/pages/contact/ContactUs";
+import DonationSuccess from "@/pages/donation/DonationSuccess";
+import DonationFail from "@/pages/donation/DonationFail";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +58,7 @@ export const router = createBrowserRouter([
         path: "/volunteer",
         element: <VolunteerRecruitmentForm />,
       },
+
       {
         path: "/login",
         element: <Login />,
@@ -69,6 +72,14 @@ export const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/donate/success/:transactionId",
+    element: <DonationSuccess />,
+  },
+  {
+    path: "/donate/fail/:transactionId",
+    element: <DonationFail />,
   },
   {
     path: "dashboard",

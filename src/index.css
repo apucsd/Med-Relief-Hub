@@ -77,14 +77,16 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
+  html,
+  * {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
     scroll-behavior: smooth;
   }
   .bg-header {
-    background: url("images/donation2.jpg") center center;
+    background: url("../public/images/donation2.jpg") center center;
     background-repeat: no-repeat;
     background-size: cover;
     /* background-color: rgba(0, 0, 0, 0.274); */
@@ -92,4 +94,17 @@
     background-blend-mode: multiply;
     background-attachment: fixed;
   }
+}
+
+.bgGradient {
+  /* background-color: hsla(189, 100%, 99%, 1); */
+  background-image: radial-gradient(
+      at 70% 34%,
+      hsla(287, 100%, 97%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 64% 66%, hsla(30, 0%, 100%, 1) 0px, transparent 50%),
+    radial-gradient(at 89% 48%, hsla(227, 100%, 99%, 1) 0px, transparent 50%),
+    radial-gradient(at 91% 15%, hsla(191, 96%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 7% 52%, hsla(240, 0%, 94%, 1) 0px, transparent 50%);
 }

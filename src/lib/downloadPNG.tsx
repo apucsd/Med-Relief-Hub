@@ -5,12 +5,12 @@ export const downLoadPNG = (target: string) => {
   const targetElement = document.getElementById(target);
   console.log(targetElement, "target", target);
 
-  if (targetElement) {
+  if (targetElement?.innerHTML) {
     // Check if targetElement is not null
     html2canvas(targetElement, {
       useCORS: true,
       onclone: () => {
-        toast.success("Your volunteer form downloaded");
+        toast.success("Your file is downloaded");
       },
     }).then((canvas) => {
       const dataUrl = canvas.toDataURL("image/png");
@@ -18,7 +18,7 @@ export const downLoadPNG = (target: string) => {
       // Create a download link and trigger the download
       const downloadLink = document.createElement("a");
       downloadLink.href = dataUrl;
-      downloadLink.download = "dfdfd";
+      downloadLink.download = "med-relief-hub";
       downloadLink.click();
     });
   } else {

@@ -14,12 +14,10 @@ const OurVolunteers = () => {
     <div>
       <section className="">
         <div className="mx-auto">
-          <div className=" h-60 bg-[#5E9BE5] dark:bg-black flex justify-center items-center">
+          <div className=" h-60 bg-secondary dark:bg-black flex justify-center items-center">
             <div className="text-center space-y-2 text-white ">
               <h1 className="text-5xl font-semibold">Our Volunteers</h1>
-              <p className="  text-gray-200">
-                Have a look to the volunteer of our organization
-              </p>
+              <p>Have a look to the volunteer of our organization</p>
             </div>
           </div>
 
