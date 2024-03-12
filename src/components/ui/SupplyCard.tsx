@@ -33,11 +33,11 @@ const SupplyCard = ({ image, amount, category, title, _id }: TSupply) => {
       initial="initial"
       animate="initial"
       whileHover="animate"
-      className="relative w-[369px] group  mx-auto md:h-[300px]"
+      className="relative w-full md:w-[369px] group  mx-auto md:h-[300px]"
     >
       <div className=" md:w-[250px] overflow-hidden">
         <img
-          className=" group-hover:scale-110 w-full  transition-all duration-500 object-cover h-[150px]  "
+          className=" group-hover:scale-110 w-1/2 mx-auto  md:w-full  transition-all duration-500 object-cover h-[150px]  "
           src={image}
           alt=""
         />

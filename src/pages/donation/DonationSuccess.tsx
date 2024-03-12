@@ -91,9 +91,9 @@ const DonationSuccess = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
-          <img className="w-full h-full" src="/public/thanks.svg" alt="" />
+          <img className="w-full h-full" src="/thanks.svg" alt="" />
         </div>
         <div className="bg-white p-6 px-10  md:mx-auto">
           <svg

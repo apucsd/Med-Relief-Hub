@@ -43,7 +43,7 @@ const Banner = () => {
       <section>
         <div className="">
           <section className="">
-            <div className="px-4 mx-auto md:max-w-7xl sm:px-6 lg:px-8">
+            <div className=" mx-auto md:max-w-7xl sm:px-6 lg:px-8">
               <div className=" flex flex-col-reverse md:grid grid-cols-2">
                 <div className="flex-none mt-20 md:mt-0 space-y-5 px-4 w-full text-center md:text-start sm:max-w-lg md:px-0 lg:max-w-5xl">
                   <motion.h2
@@ -108,15 +108,17 @@ const Banner = () => {
                       }}
                       className="text-white absolute z-[9999] -bottom-10 -start-5 rounded-md text-center md:p-5 p-2 bg-secondary w-fit"
                     >
-                      <h1 className="text-2xl">
-                        <span className="text-6xl font-semibold">10+</span>
+                      <h1 className="md:text-2xl text-xl">
+                        <span className="text-3xl md:text-6xl font-semibold">
+                          10+
+                        </span>
                         <br /> Years of Service
                       </h1>
                     </motion.div>
                     <img
                       src="https://apadm.org/cms/wp-content/uploads/2023/12/bang202111_3.jpeg"
                       alt=""
-                      className="relative z-40 object-cover w-full md:rounded-tl-[108px] md:h-96 h-44"
+                      className="relative z-40 object-cover w-full md:rounded-tl-[108px] md:h-96"
                     />
 
                     <motion.div

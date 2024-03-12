@@ -115,7 +115,7 @@ const SupplyDetail = () => {
       <div>
         <img
           className="w-full h-full object-contain my-2"
-          src="/public/ssl.webp"
+          src="/ssl.webp"
           alt=""
         />
       </div>
