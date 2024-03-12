@@ -43,15 +43,15 @@ const Banner = () => {
       <section>
         <div className="">
           <section className="">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-5xl">
+            <div className="px-4 mx-auto md:max-w-7xl sm:px-6 lg:px-8">
+              <div className=" flex flex-col-reverse md:grid grid-cols-2">
+                <div className="flex-none mt-20 md:mt-0 space-y-5 px-4 w-full text-center md:text-start sm:max-w-lg md:px-0 lg:max-w-5xl">
                   <motion.h2
                     variants={item}
-                    className="text-4xl  font-extrabold md:text-5xl"
+                    className="text-2xl  font-extrabold md:text-5xl"
                   >
                     Join Us in Ensuring{" "}
-                    <span className="text-secondary text-6xl my-3 block font-bold">
+                    <span className="text-secondary text-4xl md:text-6xl my-3 block font-bold">
                       Vital Health
                     </span>{" "}
                     Supplies.
@@ -63,20 +63,18 @@ const Banner = () => {
                   </motion.p>
                   <motion.div
                     variants={item}
-                    className="items-center gap-x-3  gap-5 sm:flex sm:space-y-0"
+                    className="items-center gap-x-3 gap-y-3  gap-5 sm:flex sm:space-y-0"
                   >
-                    <Link to="/dashboard">
+                    <Link className="" to="/dashboard">
                       <AnimatedButton>
                         <Button variant="secondary">Let's get started</Button>
                       </AnimatedButton>
                     </Link>
+                    <br />
 
                     <Link to="/supplies">
                       <AnimatedButton>
-                        <Button
-                          variant={"default"}
-                          className="flex text-white items-center my-3 md:my-0 justify-center gap-x-2 py-2 px-4 border-none  rounded font-medium duration-150 active:bg-gray-100 border  md:inline-flex"
-                        >
+                        <Button variant={"default"} className="">
                           Give Support
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +106,7 @@ const Banner = () => {
                           ease: "easeInOut",
                         },
                       }}
-                      className="text-white absolute z-[9999] -bottom-10 -start-5 rounded-md text-center p-5 bg-secondary w-fit"
+                      className="text-white absolute z-[9999] -bottom-10 -start-5 rounded-md text-center md:p-5 p-2 bg-secondary w-fit"
                     >
                       <h1 className="text-2xl">
                         <span className="text-6xl font-semibold">10+</span>

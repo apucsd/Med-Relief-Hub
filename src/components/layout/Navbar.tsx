@@ -120,7 +120,7 @@ const Navbar = () => {
     });
   };
   return (
-    <nav className="h-full w-full container">
+    <nav className="py-2 w-full container">
       <div className="flex justify-between items-center">
         <div className=" relative">
           <Link
@@ -128,7 +128,7 @@ const Navbar = () => {
             className="flex ms-4 items-center whitespace-nowrap text-2xl font-black"
           >
             <span className="flex gap-1 justify-center items-center bold">
-              <img src="/public/logo.svg" alt="" />
+              <img src="/logo.svg" alt="" />
               MedReliefHub
             </span>
           </Link>

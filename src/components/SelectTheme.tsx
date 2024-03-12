@@ -26,9 +26,7 @@ const SelectTheme = () => {
     >
       <SelectTrigger
         style={{ fontFamily: "Quicksand!", fontStyle: "italic!" }}
-        className={`${
-          mode === "light" ? "bg-" : "bg-black text-white"
-        } rounded-lg border-none  outline-none text-[16px] font-semibold "`}
+        className={`bg-transparent rounded-lg border-none  outline-none text-[16px] font-semibold "`}
       >
         <div className="flex uppercase justify-center items-center gap-2">
           {mode === "light" ? (
