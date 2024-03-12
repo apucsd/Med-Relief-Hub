@@ -31,3 +31,17 @@ You can access the live version of MedReliefHub [here](https://med-relief-hub.ve
 - ESLint and Prettier are configured to maintain code consistency and adhere to best practices.
 
 Feel free to explore and contribute to MedReliefHub. If you encounter any issues or have suggestions for improvements, please submit an issue or pull request.
+
+## SSLCommerz Integration for Donations
+
+MedReliefHub now offers seamless integration with SSLCommerz, a secure and trusted online payment gateway, to facilitate donations for disaster relief efforts. With SSLCommerz, users can make donations securely and conveniently, ensuring that vital funds reach those in need efficiently.
+
+### Key Features of SSLCommerz Integration:
+
+- **Secure Transactions**: SSLCommerz ensures end-to-end encryption, protecting users' sensitive information during transactions, thereby fostering trust and confidence among donors.
+
+- **Multiple Payment Options**: Donors can choose from a variety of payment options supported by SSLCommerz, including credit/debit cards, mobile banking, and digital wallets, making it convenient for users to contribute.
+
+- **Real-time Payment Confirmation**: Upon successful completion of a donation, users receive instant confirmation of their transaction, providing assurance and transparency throughout the donation process.
+
+- **Real-time Payment Script**: Upon successful completion of a donation, users receive can get the payment script for the donation they did.
